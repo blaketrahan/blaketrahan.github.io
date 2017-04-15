@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-    <style>
-    * {
-    	font-family: sans-serif;
-    }
-    </style>
-  </head>
-  <body>
-	hello
+	<head>
+		<meta charset="UTF-8">
+		<title>title</title>
+		<style>
+		* {
+			font-family: serif;
+		}
+		.title {
+			font-style: italic;
+		}
+		.black {
+			color: #000;
+			font-family: sans-serif;
+			padding: 1px 3px;
+			font-size: 10px;
+		}
+		div,a,img {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+		.twit {
+			letter-spacing: 5px;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+		.work {
+			padding: 6px;
+			margin: 24px 0;
+		}
+		.highlight .work,
+		.highlight .btn-highlight {
+			background-color: yellow;
+		}
+		.btn-highlight{
+			font-size: 12px;
+			letter-spacing: 2px;
+			cursor: pointer;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			background: #fff;
+		}
+		.hex {
+			display: inline;
+			font-size: 18px;
+			line-height: 1px;
+		}
+		</style>
+	</head>
+<body>
+	<button id='Highlight' class='btn-highlight'>highlight work <span class='hex'>&#9754;</span></button><br>
+	toma <div class='black'>toma.trahan@gmail.com</div> <a class='twit' href='https://twitter.com/_toma_t'>twitter</a>
+	<strong>2017</strong><a class='work' href='hero-leander.html'>
+		<span class='title'>hero and leander, #? after rubens &#9748;</span>
+	</a>
 	<img src='https://dl.dropboxusercontent.com/u/104753816/media/giphy-downsized.gif'>
-  </body>
+	<script>
+	'use strict';
+	document.getElementById("Highlight").addEventListener("click",function()
+	{
+		document.body.className = "highlight";
+	});
+	</script>
+</body>
 </html>
