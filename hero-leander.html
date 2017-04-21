@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>Hero and Leander #?, After Rubens</title>
 	<style>
-	body {
-		font-family: serif;
-	}
+		html, body {
+			font-family: serif;
+		    cursor: move;
+		    cursor: grab;
+		    cursor: -moz-grab;
+		    cursor: -webkit-grab;
+		}
+		a:hover {
+			cursor: pointer;
+		}
+		.image {
+			width: 500px;
+			height: 400px;
+			background: #cee;
+			position: relative;
+		}
+		.mark {
+			width: 2px;
+			height: 10px;
+			position: absolute;
+		}
+
 	</style>
 </head>
 <body>
-	<h1>A painting for you.</h1>
-	<div class='image'></div>
+	<h1>_</h1>
+	<div id='Container'>
+	</div>
+	
 	<script>
-	'use strict';
+		'use strict';
 
+		var Container = document.getElementById('Container');
+
+		var Image = function()
+		{
+			var el = document.createElement('DIV');
+			el.className = 'image';
+			Container.appendChild(el);
+
+			for (var i = 0; i < 2000; i++)
+			{
+				var mark = document.createElement('DIV');
+				mark.className = 'mark';
+				var r = Math.random(1.0);
+				var x = Math.random(1.0);
+				var y = Math.random(1.0);
+				var s = Math.random(1.0) + 0.1;
+
+				var R = Math.random(1.0);
+				var G = Math.random(1.0);
+				var B = Math.random(1.0);
+				var A = Math.random(1.0);
+				mark.style.left = x * 100 + '%';
+				mark.style.top = y * 100 + '%';
+				mark.style.transform = 'rotate('+(r*360)+'deg)';
+				// mark.style.zoom = 10 * s;
+				mark.style.background = 'rgba('+parseInt(R*255)+','+parseInt(G*255)+','+parseInt(B*255)+','+(A*1)+')';
+				el.appendChild(mark);
+			}
+
+			return {
+				el : el,
+				pattern : null,
+			};
+		};
+
+		var image = Image();
 	</script>
 </body>
 </html>
