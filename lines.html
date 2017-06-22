@@ -6,7 +6,6 @@
 		<title>title</title>
 	</head>
 <body>
-
 <canvas id="game-canvas" width="480" height="480"></canvas>
 <button id="Animate">Animate</button>
 <script>
@@ -30,10 +29,25 @@
   var accumulator = 0;
   var previous = 0;
   var startTime = 0;
+  var mousePos = {x:0,y:0};
   
-  /**
-   * just a simple sprite object for demonstration purposes 
-   */
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+
+  canvas.addEventListener('mousemove', function(evt) {
+    mousePos = getMousePos(canvas, evt);
+  }, false);
+
+  canvas.addEventListener ("mouseout", function(evt) {
+  	sprite.amplitude = mousePos.x;
+  	mousePos.x = -1;
+  }, false);
+
   var sprite = {
     x: canvasWidth / 2,
     y: canvasHeight / 2,
@@ -66,20 +80,47 @@
     },
     
     display: function(alpha) {
-      this.interpolate(alpha);
       
-      // draw the sprite bro
-      // ctx.fillStyle = '#ffa700';
-      // ctx.translate(this.displayX + (this.width / 2), this.displayY + (this.height / 2))
-      // ctx.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
+      this.interpolate(alpha);
 
-	  	ctx.beginPath();
-	  	ctx.lineWidth = 15;
-	  	ctx.strokeStyle = "#F04F24";
-			ctx.moveTo(canvasWidth / 2, 10);
-			ctx.quadraticCurveTo(this.displayX + (this.width / 2), canvasHeight / 2, canvasWidth / 2, canvasHeight - 10);
-			ctx.stroke();
-		ctx.closePath();
+     
+
+		if (mousePos.x > 0 && mousePos.x < canvasWidth)
+		{
+			this.x = (mousePos.x > canvasWidth/2) ? mousePos.x - canvasWidth/2 * -1 : mousePos.x - canvasWidth/2 * 1;
+			this.x/=2;
+			this.displayX = this.x;
+			this.previousX = this.x;
+
+			ctx.beginPath();
+		  	ctx.lineWidth = 15;
+		  	ctx.strokeStyle = "#F04F24";
+				ctx.moveTo(canvasWidth / 2, 10);
+				ctx.quadraticCurveTo(this.displayX + (this.width / 2), canvasHeight / 2, canvasWidth / 2, canvasHeight - 10);
+				ctx.stroke();
+			ctx.closePath();
+
+		} else 	{
+
+			// draw the sprite bro
+			// ctx.fillStyle = '#ffa700';
+			// ctx.translate(this.displayX + (this.width / 2), this.displayY + (this.height / 2))
+			// ctx.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
+
+		  	ctx.beginPath();
+		  	ctx.lineWidth = 15;
+		  	ctx.strokeStyle = "#F04F24";
+				ctx.moveTo(canvasWidth / 2, 10);
+				ctx.quadraticCurveTo(this.displayX + (this.width / 2), canvasHeight / 2, canvasWidth / 2, canvasHeight - 10);
+				ctx.stroke();
+			ctx.closePath();
+       } 
+
+       var message = "Mouse pos: " + mousePos.x + ", " + mousePos.y + " ... " + this.x;
+        ctx.font = '18pt Calibri';
+        ctx.fillStyle = 'black';
+        ctx.fillText(message, 10, 25);
+      
     }
   };
 
@@ -87,6 +128,9 @@
   	sprite.amplitude = 150;
   });
   
+
+
+
   var update = function() {
     sprite.update();
   };
