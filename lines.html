@@ -110,11 +110,12 @@
 		this.interpolate(alpha);
 		var W = this.canvas.width;
 		var H = this.canvas.height;
-		var ctx = this.canvas.getContext("2d");
+		var ctx = this.canvas.getContext("2d",{ antialias: false, depth: false });
 
 		ctx.fillStyle = '#FFFFFF';
 	    ctx.fillRect(0, 0, W, H);
 	    ctx.save();
+	    ctx.translate(0.5,0.5);
 
 		if (this.mouse.x > 20 && this.mouse.x < W-20)
 		{
