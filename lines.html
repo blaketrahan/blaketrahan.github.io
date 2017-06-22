@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>title</title>
-	</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+  </head>
 <body>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
 <br>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
 <br>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
-<canvas width="90" height="74"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
+<canvas width="90" height="140"></canvas>
 
 <!-- <button id="Animate">Animate</button> -->
 <script>
@@ -37,8 +37,8 @@
 
   var Canvashoon = function(options)
   {
-  	"use strict";
-  	this.x = options.x || 0;
+    "use strict";
+    this.x = options.x || 0;
     this.y = options.y || 0;
     this.prev_x = options.prev_x || 0;
     this.prev_y = options.prev_y || 0;
@@ -46,7 +46,7 @@
     this.render_y = options.render_y || 0;
     this.amplitude = options.amplitude || 0;
     this.period = options.period || 2000;
-    this.width = options.width || 32;
+    this.width = options.width || 10;
     this.height = options.height || 32;
     this.speed_multiplier = options.speed_multiplier || 15;
     this.canvas  = options.canvas || null;
@@ -55,42 +55,42 @@
     this.color = options.color || "#F04F24";
 
     if (this.canvas == null) {
-    	console.log("ERROR: You forgot to set the canvas!");
-    	return null;
+      console.log("ERROR: You forgot to set the canvas!");
+      return null;
     }
 
-	this.get_mouse_pos = function(canvas, event)
-	{
-	    var rect = this.canvas.getBoundingClientRect();
-	    return {
-	      	x: event.clientX - rect.left,
- 	 		y: event.clientY - rect.top
-	    };
-  	}.bind(this);
+  this.get_mouse_pos = function(canvas, event)
+  {
+      var rect = this.canvas.getBoundingClientRect();
+      return {
+          x: event.clientX - rect.left,
+      y: event.clientY - rect.top
+      };
+    }.bind(this);
 
-	this.canvas.addEventListener('mousemove', function(event)
-	{
-    	this.mouse = this.get_mouse_pos(this.canvas, event);
-  	}.bind(this), false);
+  this.canvas.addEventListener('mousemove', function(event)
+  {
+      this.mouse = this.get_mouse_pos(this.canvas, event);
+    }.bind(this), false);
 
-  	this.canvas.addEventListener("mouseout", function(event)
-  	{
-	  	if (this.is_on) {
-	  		var W = this.canvas.width;
-	  		var H = this.canvas.height;
-		  	this.amplitude = this.mouse.x > W/2 ? W - 20 : 20;
-		  	this.amplitude *= 0.5;
-	  		this.is_on = false;
-	  	}
-	  	this.mouse.x = -1;
-  	}.bind(this), false);
+    this.canvas.addEventListener("mouseout", function(event)
+    {
+      if (this.is_on) {
+        var W = this.canvas.width;
+        var H = this.canvas.height;
+        this.amplitude = this.mouse.x > W/2 ? W - 20 : 20;
+        this.amplitude *= 0.5;
+        this.is_on = false;
+      }
+      this.mouse.x = -1;
+    }.bind(this), false);
 
 
     this.update = function()
     {
       var D = window.performance.now() - startTime;
-	  var W = this.canvas.width;
-	  var H = this.canvas.height;
+    var W = this.canvas.width;
+    var H = this.canvas.height;
     
       // animation of choice
       var X = W / 2 - this.width / 2;
@@ -107,44 +107,44 @@
 
     this.display = function(alpha)
     {
-		this.interpolate(alpha);
-		var W = this.canvas.width;
-		var H = this.canvas.height;
-		var ctx = this.canvas.getContext("2d",{ antialias: false, depth: false });
+    this.interpolate(alpha);
+    var W = this.canvas.width;
+    var H = this.canvas.height;
+    var ctx = this.canvas.getContext("2d",{ antialias: false, depth: false });
 
-		ctx.fillStyle = '#FFFFFF';
-	    ctx.fillRect(0, 0, W, H);
-	    ctx.save();
-	    ctx.translate(0.5,0.5);
+    ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, W, H);
+      ctx.save();
+      ctx.translate(0.5,0.5);
 
-		if (this.mouse.x > 20 && this.mouse.x < W-20)
-		{
-			this.is_on = true;
-			this.x = (this.mouse.x > W/2) ? this.mouse.x - W/2 * -1 : this.mouse.x - W/2 * 1;
-			this.x /= 2;
-			this.render_x = this.x;
-			this.prev_x = this.x;
+    if (this.mouse.x > 20 && this.mouse.x < W-20)
+    {
+      this.is_on = true;
+      this.x = (this.mouse.x > W/2) ? (this.mouse.x - (W/8)) : (this.mouse.x - (W/8));
+      // this.x /= 2;
+      this.render_x = this.x;
+      this.prev_x = this.x;
 
-			ctx.beginPath();
-		  	ctx.lineWidth = 15;
-		  	ctx.strokeStyle = this.color;
-				ctx.moveTo(W / 2, 10);
-				ctx.quadraticCurveTo(this.render_x + (this.width / 2), H / 2, W / 2, H - 10);
-				ctx.stroke();
-			ctx.closePath();
+      ctx.beginPath();
+        ctx.lineWidth = this.width;
+        ctx.strokeStyle = this.color;
+        ctx.moveTo(W / 2, 10);
+        ctx.quadraticCurveTo(this.render_x + (this.width / 2), H / 2, W / 2, H - 10);
+        ctx.stroke();
+      ctx.closePath();
 
-		} else 	{
-		  	ctx.beginPath();
-		  	ctx.lineWidth = 15;
-		  	ctx.strokeStyle = this.color;
-				ctx.moveTo(W / 2, 10);
-				ctx.quadraticCurveTo(this.render_x + (this.width / 2), H / 2, W / 2, H - 10);
-				ctx.stroke();
-			ctx.closePath();
-	   }
+    } else  {
+        ctx.beginPath();
+        ctx.lineWidth = this.width;
+        ctx.strokeStyle = this.color;
+        ctx.moveTo(W / 2, 10);
+        ctx.quadraticCurveTo(this.render_x + (this.width / 2), H / 2, W / 2, H - 10);
+        ctx.stroke();
+      ctx.closePath();
+     }
 
-	   ctx.restore();
-	}.bind(this);
+     ctx.restore();
+  }.bind(this);
   };
 
 
@@ -160,25 +160,25 @@
   var canvashoon = [];
   var canvases = document.getElementsByTagName("CANVAS");
   for (var c = 0; c < canvases.length; c++) {
-	canvashoon.push(new Canvashoon(
-	{
-		canvas : canvases[c],
-		color : getRandomColor(),
-	}));
+  canvashoon.push(new Canvashoon(
+  {
+    canvas : canvases[c],
+    color : getRandomColor(),
+  }));
   }
 
   // document.getElementById("Animate").addEventListener("click",function(e){
-  // 	canvashoon.amplitude = 40;
+  //  canvashoon.amplitude = 40;
   // });
 
   var update = function() {
     for (var i =0; i < canvashoon.length; i++)
-    	canvashoon[i].update();
+      canvashoon[i].update();
   };
   
   var display = function(alpha) {
     for (var i =0; i < canvashoon.length; i++)
-    	canvashoon[i].display(alpha);
+      canvashoon[i].display(alpha);
   };
   
   var Loop = function() {
@@ -196,10 +196,10 @@
     if (accumulator >= frameDuration)
     {
 
-	  for (var i =0; i < canvashoon.length; i++) {
-      	canvashoon[i].prev_x = canvashoon[i].x;
-	    canvashoon[i].prev_y = canvashoon[i].y;
-	  }
+    for (var i =0; i < canvashoon.length; i++) {
+        canvashoon[i].prev_x = canvashoon[i].x;
+      canvashoon[i].prev_y = canvashoon[i].y;
+    }
       
       update();
       
