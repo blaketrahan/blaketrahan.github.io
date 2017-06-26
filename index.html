@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>title</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>title</title>
 
-		<style>
-		html, body {
-			font-family: serif;
-		    cursor: move;
-		    cursor: grab;
-		    cursor: -moz-grab;
-		    cursor: -webkit-grab;
-		}
-		a:hover {
-			cursor: pointer;
-		}
-		.black {
-			color: #000;
-			font-family: sans-serif;
-			padding: 1px 3px;
-			font-size: 10px;
-		}
-		div,a,img {
-			display: inline-block;
-			vertical-align: bottom;
-		}
-		.twit {
-			letter-spacing: 5px;
-			font-size: 12px;
-			text-transform: uppercase;
-		}
-		.work {
-			padding: 6px;
-			margin: 24px 0;
-			font-style: italic;
-		}
-		.writing {
-			padding: 6px;
-		}
-		.highlight .work,
-		.highlight .btn-highlight {
-			background-color: red;
-			color: #fff;
-		}
-		.highlight-writing .writing,
-		.highlight-writing .btn-highlight-writing {
-			background-color: blue;
-			color: #fff;
-		}
-		.btn {
-			font-size: 12px;
-			letter-spacing: 2px;
-			cursor: pointer;
-			border: 1px solid #ccc;
-			border-radius: 6px;
-			background: #fff;
-			outline: 0;
-		}
-		.hex {
-			display: inline;
-			font-size: 18px;
-			line-height: 1px;
-		}
-		</style>
-	</head>
+<style>
+html, body {
+	font-family: serif;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+a:hover {
+	cursor: pointer;
+}
+.black {
+	color: #000;
+	font-family: sans-serif;
+	padding: 1px 3px;
+	font-size: 10px;
+}
+div,a,img {
+	display: inline-block;
+	vertical-align: bottom;
+}
+.twit {
+	letter-spacing: 5px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.work {
+	padding: 6px;
+	margin: 24px 0;
+	font-style: italic;
+}
+.writing {
+	padding: 6px;
+}
+.highlight .work,
+.highlight .btn-highlight {
+	background-color: red;
+	color: #fff;
+}
+.highlight-writing .writing,
+.highlight-writing .btn-highlight-writing {
+	background-color: blue;
+	color: #fff;
+}
+.btn {
+	font-size: 12px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	background: #fff;
+	outline: 0;
+}
+.hex {
+	display: inline;
+	font-size: 18px;
+	line-height: 1px;
+}
+.books {
+	width: 300px;
+	text-align: right;
+}
+.books h1 {
+    font-size: 14px;
+    display: block;
+    margin: 0;
+    font-family: monospace;
+    text-align: left;
+}
+.books > div {
+    display: block;
+    margin: 0;
+    position: relative;
+}
+.books i {
+	margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 33%
+}
+.books span {
+    font-family: monospace;
+    margin-left: 10px;
+    font-size: 11px;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: top;
+    width: 33%
+}
+</style>
+</head>
 <body>
 <div class='main'>
 	<button id='Highlight' class='btn btn-highlight'>highlight work <span class='hex'>&#9754;</span></button><button id='HighlightWriting' class='btn btn-highlight-writing'>highlight blogs <span class='hex'>&#9997;</span></button><br><br>
@@ -75,6 +106,25 @@
 	<!-- <a class='work' href='hero-leander.html'>hero and leander, #? after rubens &#9748;</a> -->
 	<a href='art-sightings.html' class='writing'>art sightings</a>
 	<a href='new-year-new-me.html' class='work'>new year, new me (portrait at a party, new year's eve)</a>
+	<div class='books'>
+		<h1>unsorted</h1>
+		<div><i>the marriage plot</i><em>jeffrey eugenides</em><span>lafayette, la</span></div>
+		<div><i>norwegian wood</i> haruki murakami <span>chicago, il</span></div>
+		<div><i>the virgin suicides</i> jeffrey eugenides <span>chicago, il</span></div>
+		<div><i>the crying of lot 49</i> thomas pynchon <span>chicago, il</span></div>
+		<h1>2017</h1>
+		<div><i>black boy</i> richard wright <span>lafayette, la</span></div>
+		<div><i>wise blood</i> flannery o’connor <span>lafayette, la</span></div>
+		<div><i>lolita</i> vladimir nabokov <span>lafayette, la</span></div>
+		<div><i>on the road</i> jack kerouac <span>lafayette, la</span></div>
+		<div><i>franny and  zooey</i> j.d. salinger <span>lafayette, la</span></div>
+		<div><i>the painting of modern life</i> t.j. clark <span>lafayette, la</span></div>
+		<div><i>after art</i> david joselit <span>lafayette, la, reread</span></div>
+		<div><i>lost in the funhouse</i> john barth<span>tokyo, jp</span></div>
+		<div><i>swing time</i> zadie smith<span>tokyo, jp</span></div>
+		<div><i>the beauty of history</i> viivi luik<span>tallinn, estonia</span></div>
+		<div><i>petty god</i> kaur kender<span>tallinn, estonia</span></div>
+	</div>
 </div>
 	<script>
 	'use strict';
