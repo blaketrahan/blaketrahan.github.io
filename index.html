@@ -64,8 +64,6 @@ div,a,img {
 	line-height: 1px;
 }
 .books {
-	width: 300px;
-	text-align: right;
 }
 .books h1 {
     font-size: 14px;
@@ -75,15 +73,31 @@ div,a,img {
     text-align: left;
 }
 .books > div {
-    display: block;
-    margin: 0;
+		margin: 0;
     position: relative;
+    background: #d5dcde;
+    vertical-align: bottom;
+    display: inline-block;
+    height: 160px;
+    width: 60px;
+    border-right: 10px solid #d4cbcb;
+    border-bottom: 6px solid #d23b3b;
 }
 .books i {
+    background: #f5e5de;
 	margin-right: 10px;
     display: inline-block;
     vertical-align: top;
-    width: 33%
+    width: 50%;
+    padding: 5px 10px 0 20px;
+    box-sizing: border-box;
+    border-bottom: 10px solid #d4d6d5;
+}
+.books > div:hover {
+	filter:invert(100%);
+	cursor: pointer;
+	z-index: 100;
+	position: relative;
 }
 .books span {
     font-family: monospace;
@@ -92,7 +106,25 @@ div,a,img {
     font-weight: normal;
     display: inline-block;
     vertical-align: top;
-    width: 33%
+    width: 103%;
+    background: rgb(228, 140, 187);
+    border-top: 8px solid #ffdbdb;
+}
+.books b {
+    color: gold;
+    background: blue;
+    border-radius: 50%;
+    font-size: 8px;
+    width: 14px;
+    height: 14px;
+    display: block;
+    line-height: 10px;
+    padding: 3px 0 0 3px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: -2px 2px 0 0 #9c9c9c;
 }
 </style>
 </head>
@@ -106,24 +138,30 @@ div,a,img {
 	<!-- <a class='work' href='hero-leander.html'>hero and leander, #? after rubens &#9748;</a> -->
 	<a href='art-sightings.html' class='writing'>art sightings</a>
 	<a href='new-year-new-me.html' class='work'>new year, new me (portrait at a party, new year's eve)</a>
+	<h1>library of bad book covers</h1>
 	<div class='books'>
 		<h1>unsorted</h1>
-		<div><i>the marriage plot</i><em>jeffrey eugenides</em><span>lafayette, la</span></div>
+		<div><i>the marriage plot</i><em>jeffrey eugenides</em><span>lafayette, la</span><b>☆</b></div>
 		<div><i>norwegian wood</i> haruki murakami <span>chicago, il</span></div>
 		<div><i>the virgin suicides</i> jeffrey eugenides <span>chicago, il</span></div>
-		<div><i>the crying of lot 49</i> thomas pynchon <span>chicago, il</span></div>
+		<div><i>the crying of lot 49</i> thomas pynchon <span>lafayette, la</span></div>
 		<h1>2017</h1>
-		<div><i>black boy</i> richard wright <span>lafayette, la</span></div>
+		<div><i>black boy</i> richard wright <span>lafayette, la</span><b>☆</b></div>
 		<div><i>wise blood</i> flannery o’connor <span>lafayette, la</span></div>
 		<div><i>lolita</i> vladimir nabokov <span>lafayette, la</span></div>
 		<div><i>on the road</i> jack kerouac <span>lafayette, la</span></div>
 		<div><i>franny and  zooey</i> j.d. salinger <span>lafayette, la</span></div>
-		<div><i>the painting of modern life</i> t.j. clark <span>lafayette, la</span></div>
+		<div><i>the painting of modern life</i> t.j. clark <span>lafayette, la</span><b>☆</b></div>
 		<div><i>after art</i> david joselit <span>lafayette, la, reread</span></div>
-		<div><i>lost in the funhouse</i> john barth<span>tokyo, jp</span></div>
-		<div><i>swing time</i> zadie smith<span>tokyo, jp</span></div>
+		<div><i>lost in the funhouse</i> john barth<span>tokyo, jp</span><b>☆</b></div>
+		<div><i>swing time</i> zadie smith<span>tokyo, jp</span><b>☆</b></div>
 		<div><i>the beauty of history</i> viivi luik<span>tallinn, estonia</span></div>
 		<div><i>petty god</i> kaur kender<span>tallinn, estonia</span></div>
+	</div>
+
+	<div>
+		<h3>puzzles</h3>
+		<div><a href="https://www.youtube.com/watch?v=0zVjdEhHmGo">DOs and DON'Ts of Honest Puzzle Game Design</a> by Matthew VanDevander</div>
 	</div>
 </div>
 	<script>
