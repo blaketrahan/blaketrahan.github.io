@@ -26,6 +26,11 @@ div,a,img {
 	display: inline-block;
 	vertical-align: bottom;
 }
+.main {
+	vertical-align: top;
+    display: inline-block;
+    width: 85%;
+}
 .twit {
 	letter-spacing: 5px;
 	font-size: 12px;
@@ -63,7 +68,10 @@ div,a,img {
 	font-size: 18px;
 	line-height: 1px;
 }
-.books {
+.books {    
+	vertical-align: top;
+    display: inline-block;
+    width: 15%;
 }
 .books h1 {
     font-size: 14px;
@@ -72,16 +80,23 @@ div,a,img {
     font-family: monospace;
     text-align: left;
 }
-.books > div {
-		margin: 0;
+.books .title {
+	  display: block;
+    padding: 2px;
+    font-weight: 100;
+    text-align: center;
+}
+/*.books > div {
+margin: 0;
+    margin-right: 0;
     position: relative;
     background: #d5dcde;
     vertical-align: bottom;
     display: inline-block;
-    height: 160px;
-    width: 60px;
+    width: 70px;
     border-right: 10px solid #d4cbcb;
     border-bottom: 6px solid #d23b3b;
+    font-size: 12px;
 }
 .books i {
     background: #f5e5de;
@@ -97,13 +112,13 @@ div,a,img {
 	filter:invert(100%);
 	cursor: pointer;
 	z-index: 100;
-	position: relative;
 }
 .books span {
-    font-family: monospace;
-    margin-left: 10px;
-    font-size: 11px;
+font-family: monospace;
+    margin: auto;
+    font-size: 10px;
     font-weight: normal;
+    max-width: 70px;
     display: inline-block;
     vertical-align: top;
     width: 103%;
@@ -125,6 +140,16 @@ div,a,img {
     left: 0;
     top: 0;
     box-shadow: -2px 2px 0 0 #9c9c9c;
+}*/
+.books > div {
+	font-size: 12px;
+	display: block;
+}
+.books >div:hover {
+	color: pink;
+}
+.books span {
+    padding-left: 6px;
 }
 </style>
 </head>
@@ -138,31 +163,32 @@ div,a,img {
 	<!-- <a class='work' href='hero-leander.html'>hero and leander, #? after rubens &#9748;</a> -->
 	<a href='art-sightings.html' class='writing'>art sightings</a>
 	<a href='new-year-new-me.html' class='work'>new year, new me (portrait at a party, new year's eve)</a>
-	<h1>library of bad book covers</h1>
-	<div class='books'>
-		<h1>unsorted</h1>
-		<div><i>the marriage plot</i><em>jeffrey eugenides</em><span>lafayette, la</span><b>☆</b></div>
-		<div><i>norwegian wood</i> haruki murakami <span>chicago, il</span></div>
-		<div><i>the virgin suicides</i> jeffrey eugenides <span>chicago, il</span></div>
-		<div><i>the crying of lot 49</i> thomas pynchon <span>lafayette, la</span></div>
-		<h1>2017</h1>
-		<div><i>black boy</i> richard wright <span>lafayette, la</span><b>☆</b></div>
-		<div><i>wise blood</i> flannery o’connor <span>lafayette, la</span></div>
-		<div><i>lolita</i> vladimir nabokov <span>lafayette, la</span></div>
-		<div><i>on the road</i> jack kerouac <span>lafayette, la</span></div>
-		<div><i>franny and  zooey</i> j.d. salinger <span>lafayette, la</span></div>
-		<div><i>the painting of modern life</i> t.j. clark <span>lafayette, la</span><b>☆</b></div>
-		<div><i>after art</i> david joselit <span>lafayette, la, reread</span></div>
-		<div><i>lost in the funhouse</i> john barth<span>tokyo, jp</span><b>☆</b></div>
-		<div><i>swing time</i> zadie smith<span>tokyo, jp</span><b>☆</b></div>
-		<div><i>the beauty of history</i> viivi luik<span>tallinn, estonia</span></div>
-		<div><i>petty god</i> kaur kender<span>tallinn, estonia</span></div>
-	</div>
-
 	<div>
 		<h3>puzzles</h3>
 		<div><a href="https://www.youtube.com/watch?v=0zVjdEhHmGo">DOs and DON'Ts of Honest Puzzle Game Design</a> by Matthew VanDevander</div>
 	</div>
+	<div><h5>rivers i've touched: Tama,Thames,Seine,Chicago</h5></div>
+	<div><h3>lafayette > [flying: new orleans, chicago, beijing, tokyo] > tokyo, japan > [flying: tokyo, moscow, tallinn] > tallinn, estonia > [ferry] > helsinki, finland > ...</h3></div>
+</div><div class='books'>
+	<h1>unsorted</h1>
+	<div><i>the marriage plot</i><br><em>jeffrey eugenides</em><span>lafayette, la</span><b>☆</b></div>
+	<div><i>norwegian wood</i><br>haruki murakami <span>chicago, il</span></div>
+	<div><i>the virgin suicides</i><br>jeffrey eugenides <span>chicago, il</span></div>
+	<div><i>the crying of lot 49</i><br>thomas pynchon <span>lafayette, la</span></div>
+	<h1>2017</h1>
+	<div><i>black boy</i><br>richard wright <span>lafayette, la</span><b>☆</b></div>
+	<div><i>wise blood</i><br>flannery o’connor <span>lafayette, la</span></div>
+	<div><i>lolita</i><br>vladimir nabokov <span>lafayette, la</span></div>
+	<div><i>on the road</i><br>jack kerouac <span>lafayette, la</span></div>
+	<div><i>franny and  zooey</i><br>j.d. salinger <span>lafayette, la</span></div>
+	<div><i>the painting of modern life</i><br>t.j. clark <span>in transit</span><b>☆</b></div>
+	<div><i>after art</i><br>david joselit <span>lafayette, la, reread</span></div>
+	<div><i>lost in the funhouse</i><br>john barth<span>tokyo, jp</span><b>☆</b></div>
+	<div><i>swing time</i><br>zadie smith<span>tokyo, jp</span><b>☆</b></div>
+	<div><i>the beauty of history</i><br>viivi luik<span>tallinn, estonia</span></div>
+	<div><i>petty god</i><br>kaur kender<span>tallinn, estonia</span></div>
+	<div><i>the bluest eye</i><br>toni morrison<span>in transit</span></div>
+	<div><i>the kalevala</i><br>tr. keith bosley<span>helsinki, finland</span></div>
 </div>
 	<script>
 	'use strict';
