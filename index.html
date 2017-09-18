@@ -8,22 +8,12 @@
 <style>
 html, body {
   font-family: serif;
-    cursor: move;
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
     height: 100%;
     padding: 0;
     margin: 0;
 }
 a:hover {
   cursor: pointer;
-}
-.black {
-  color: #000;
-  font-family: sans-serif;
-  padding: 1px 3px;
-  font-size: 10px;
 }
 div,a,img {
   display: inline-block;
@@ -42,71 +32,26 @@ div,a,img {
 .B,.C {
   width: 25%
 }
-.twit {
-  letter-spacing: 5px;
+.books.C {
   font-size: 12px;
+}
+.books.C i {
   text-transform: uppercase;
 }
-.work {
-  padding: 6px;
-  margin: 24px 0;
-  font-style: italic;
-}
-.writing {
-  padding: 6px;
-}
-.highlight .work,
-.highlight .btn-highlight {
-  background-color: red;
-  color: #fff;
-}
-.highlight-writing .writing,
-.highlight-writing .btn-highlight-writing {
-  background-color: blue;
-  color: #fff;
-}
-.btn {
-  font-size: 12px;
-  letter-spacing: 2px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #fff;
-  outline: 0;
-}
-.hex {
-  display: inline;
-  font-size: 18px;
-  line-height: 1px;
-}
-.books h1 {
-    font-size: 14px;
-    display: block;
-    margin: 0;
-    font-family: monospace;
-    text-align: left;
-}
-.books .title {
-    display: block;
-    padding: 2px;
-    font-weight: 100;
-    text-align: center;
-}
-.books > div {
-  font-size: 12px;
+.books.C span {
   display: block;
+  text-transform: lowercase;
 }
-.books >div:hover {
-  color: pink;
-}
-.books span {
-    padding-left: 6px;
+.books.C div {
+  display: block;
+  margin: 0 auto 1em;
+  text-transform: capitalize;
 }
 </style>
 </head>
 <body>
 <div class='A'>
-  <button id='Highlight' class='btn btn-highlight'>highlight work <span class='hex'>&#9754;</span></button><button id='HighlightWriting' class='btn btn-highlight-writing'>highlight blogs <span class='hex'>&#9997;</span></button><br><br>
+  <br><br>
   <h4>Blank Toma</h4>
   <strong>2017</strong>
   <p>welcome to my personal webpage.</p>
@@ -114,28 +59,28 @@ div,a,img {
     <h3>things i like</h3>
     <div><a href="https://www.youtube.com/watch?v=0zVjdEhHmGo">DOs and DON'Ts of Honest Puzzle Game Design</a> by Matthew VanDevander</div>
 </div><div class='books C'>
-  <h1>unsorted</h1>
-    <div><i>the marriage plot</i><br><em>jeffrey eugenides</em><span>lafayette, la</span><b>☆</b></div>
-    <div><i>norwegian wood</i><br>haruki murakami <span>chicago, il</span></div>
-    <div><i>the virgin suicides</i><br>jeffrey eugenides <span>chicago, il</span></div>
-    <div><i>the crying of lot 49</i><br>thomas pynchon <span>lafayette, la</span></div>
-  <h1>2017</h1>
-    <div><i>black boy</i><br>richard wright <span>lafayette, la</span><b>☆</b></div>
-    <div><i>wise blood</i><br>flannery o’connor <span>lafayette, la</span></div>
-    <div><i>lolita</i><br>vladimir nabokov <span>lafayette, la</span></div>
-    <div><i>on the road</i><br>jack kerouac <span>lafayette, la</span></div>
-    <div><i>franny and  zooey</i><br>j.d. salinger <span>lafayette, la</span></div>
-    <div><i>after art</i><br>david joselit <span>lafayette, la, reread</span></div>
-    <div><i>lost in the funhouse</i><br>john barth<span>tokyo, jp</span><b>☆</b></div>
-    <div><i>swing time</i><br>zadie smith<span>tokyo, jp</span><b>☆</b></div>
-    <div><i>the beauty of history</i><br>viivi luik<span>tallinn, estonia</span></div>
-    <div><i>the bluest eye</i><br>toni morrison<span>in transit</span></div>
-    <div><i>the woman warrior</i><br>maxine hong kingston<span>belgrade, serbia</span></div>
   <h1>reading</h1>
-    <div><i>the kalevala</i><br>elias lönnrot tr. keith bosley<span>in transit</span></div>
-    <div><i>on photography</i><br>susan sontag<span>in transit</span></div>
-    <div>various poems<br>robert frost<span>in transit</span></div>
-    <div><i>the painting of modern life</i><br>t.j. clark <span>in transit</span><b>☆</b></div>
+    <div><i>the kalevala</i><br>elias lönnrot tr. keith bosley<span> in transit</span></div>
+    <div><i>on photography</i><br>susan sontag<span> in transit</span></div>
+    <div><i>North of Boston</i><br>robert frost<span> in transit</span></div>
+    <div><i>the painting of modern life</i><br>t.j. clark <span> in transit</span><b>☆</b></div>
+  <h1>2017</h1>
+    <div><i>the woman warrior</i><br>maxine hong kingston<span> belgrade, serbia</span></div>
+    <div><i>the bluest eye</i><br>toni morrison<span> in transit</span></div>
+    <div><i>the beauty of history</i><br>viivi luik<span> tallinn, estonia</span></div>
+    <div><i>swing time</i><br>zadie smith<span> tokyo, jp</span><b>☆</b></div>
+    <div><i>lost in the funhouse</i><br>john barth<span> tokyo, jp</span><b>☆</b></div>
+    <div><i>after art</i><br>david joselit <span> lafayette, la, reread</span></div>
+    <div><i>franny and  zooey</i><br>j.d. salinger <span> lafayette, la</span></div>
+    <div><i>on the road</i><br>jack kerouac <span> lafayette, la</span></div>
+    <div><i>lolita</i><br>vladimir nabokov <span> lafayette, la</span></div>
+    <div><i>wise blood</i><br>flannery o’connor <span> lafayette, la</span></div>
+    <div><i>black boy</i><br>richard wright <span> lafayette, la</span><b>☆</b></div>
+  <h1>unsorted</h1>
+    <div><i>the crying of lot 49</i><br>thomas pynchon <span> lafayette, la</span></div>
+    <div><i>the virgin suicides</i><br>jeffrey eugenides <span> chicago, il</span></div>
+    <div><i>norwegian wood</i><br>haruki murakami <span> chicago, il</span></div>
+    <div><i>the marriage plot</i><br>jeffrey eugenides<span> lafayette, la</span><b>☆</b></div>
 </div>
 </body>
 </html>
