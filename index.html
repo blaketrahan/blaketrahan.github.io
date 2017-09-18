@@ -7,71 +7,77 @@
 
 <style>
 html, body {
-	font-family: serif;
+  font-family: serif;
     cursor: move;
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 a:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 .black {
-	color: #000;
-	font-family: sans-serif;
-	padding: 1px 3px;
-	font-size: 10px;
+  color: #000;
+  font-family: sans-serif;
+  padding: 1px 3px;
+  font-size: 10px;
 }
 div,a,img {
-	display: inline-block;
-	vertical-align: bottom;
+  display: inline-block;
+  vertical-align: bottom;
 }
-.main {
-	vertical-align: top;
-    display: inline-block;
-    width: 85%;
+.A,.B,.C {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.B,.C {
+  width: 25%
 }
 .twit {
-	letter-spacing: 5px;
-	font-size: 12px;
-	text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 .work {
-	padding: 6px;
-	margin: 24px 0;
-	font-style: italic;
+  padding: 6px;
+  margin: 24px 0;
+  font-style: italic;
 }
 .writing {
-	padding: 6px;
+  padding: 6px;
 }
 .highlight .work,
 .highlight .btn-highlight {
-	background-color: red;
-	color: #fff;
+  background-color: red;
+  color: #fff;
 }
 .highlight-writing .writing,
 .highlight-writing .btn-highlight-writing {
-	background-color: blue;
-	color: #fff;
+  background-color: blue;
+  color: #fff;
 }
 .btn {
-	font-size: 12px;
-	letter-spacing: 2px;
-	cursor: pointer;
-	border: 1px solid #ccc;
-	border-radius: 6px;
-	background: #fff;
-	outline: 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  outline: 0;
 }
 .hex {
-	display: inline;
-	font-size: 18px;
-	line-height: 1px;
-}
-.books {    
-	vertical-align: top;
-    display: inline-block;
-    width: 15%;
+  display: inline;
+  font-size: 18px;
+  line-height: 1px;
 }
 .books h1 {
     font-size: 14px;
@@ -81,108 +87,55 @@ div,a,img {
     text-align: left;
 }
 .books .title {
-	  display: block;
+    display: block;
     padding: 2px;
     font-weight: 100;
     text-align: center;
 }
-/*.books > div {
-margin: 0;
-    margin-right: 0;
-    position: relative;
-    background: #d5dcde;
-    vertical-align: bottom;
-    display: inline-block;
-    width: 70px;
-    border-right: 10px solid #d4cbcb;
-    border-bottom: 6px solid #d23b3b;
-    font-size: 12px;
-}
-.books i {
-    background: #f5e5de;
-	margin-right: 10px;
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-    padding: 5px 10px 0 20px;
-    box-sizing: border-box;
-    border-bottom: 10px solid #d4d6d5;
-}
-.books > div:hover {
-	filter:invert(100%);
-	cursor: pointer;
-	z-index: 100;
-}
-.books span {
-font-family: monospace;
-    margin: auto;
-    font-size: 10px;
-    font-weight: normal;
-    max-width: 70px;
-    display: inline-block;
-    vertical-align: top;
-    width: 103%;
-    background: rgb(228, 140, 187);
-    border-top: 8px solid #ffdbdb;
-}
-.books b {
-    color: gold;
-    background: blue;
-    border-radius: 50%;
-    font-size: 8px;
-    width: 14px;
-    height: 14px;
-    display: block;
-    line-height: 10px;
-    padding: 3px 0 0 3px;
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    top: 0;
-    box-shadow: -2px 2px 0 0 #9c9c9c;
-}*/
 .books > div {
-	font-size: 13px;
-	display: block;
+  font-size: 12px;
+  display: block;
+}
+.books >div:hover {
+  color: pink;
 }
 .books span {
     padding-left: 6px;
 }
-.books {
-  color: #f1eded;
-}
-.books i, .books em, .books h1 {
-  color: black;
-}	
-.books >div:hover {
-	color: pink;
-}
 </style>
 </head>
 <body>
-<div class='books'>
-	<h1>unsorted</h1>
-	<div><i>the marriage plot</i><br>jeffrey eugenides<span>lafayette, la</span><b>☆</b></div>
-	<div><i>norwegian wood</i><br>haruki murakami <span>chicago, il</span></div>
-	<div><i>the virgin suicides</i><br>jeffrey eugenides <span>chicago, il</span></div>
-	<div><i>the crying of lot 49</i><br>thomas pynchon <span>lafayette, la</span></div>
-	<h1>2017</h1>
-	<div><i>black boy</i><br>richard wright <span>lafayette, la</span><b>☆</b></div>
-	<div><i>wise blood</i><br>flannery o’connor <span>lafayette, la</span></div>
-	<div><i>lolita</i><br>vladimir nabokov <span>lafayette, la</span></div>
-	<div><i>on the road</i><br>jack kerouac <span>lafayette, la</span></div>
-	<div><i>franny and  zooey</i><br>j.d. salinger <span>lafayette, la</span></div>
-	<div><i>after art</i><br>david joselit <span>lafayette, la, reread</span></div>
-	<div><i>lost in the funhouse</i><br>john barth<span>tokyo, jp</span><b>☆</b></div>
-	<div><i>swing time</i><br>zadie smith<span>tokyo, jp</span><b>☆</b></div>
-	<div><i>the beauty of history</i><br>viivi luik<span>tallinn, estonia</span></div>
-	<div><i>the bluest eye</i><br>toni morrison<span>in transit; tokyo, jp; tallinn, estonia; helsinki, finland </span></div>
-	<div><h1>reading:</h1></div>
-	<div><i>the kalevala</i><br>elias lönnrot tr. keith bosley<span>in transit; helsinki, finland; tartu, estonia; riga, latvia; zagreb, croatia;</span></div>
-	<div><i>on photography</i><br>susan sontag<span>in transit; riga, latvia; zagreb, croatia</span></div>
-	<div><em>various poems</em><br>robert frost<span>in transit; riga, latvia; zagreb, croatia;</span></div>
-	<div><i>the painting of modern life</i><br>t.j. clark <span>in transit; lafayette, la;</span></div>
-	<div><i>the woman warrior</i><br>maxine hong kingston<span>zagreb, croatia</span></div>
+<div class='A'>
+  <button id='Highlight' class='btn btn-highlight'>highlight work <span class='hex'>&#9754;</span></button><button id='HighlightWriting' class='btn btn-highlight-writing'>highlight blogs <span class='hex'>&#9997;</span></button><br><br>
+  <h4>Blank Toma</h4>
+  <strong>2017</strong>
+  <p>welcome to my personal webpage.</p>
+</div><div class="B">
+    <h3>things i like</h3>
+    <div><a href="https://www.youtube.com/watch?v=0zVjdEhHmGo">DOs and DON'Ts of Honest Puzzle Game Design</a> by Matthew VanDevander</div>
+</div><div class='books C'>
+  <h1>unsorted</h1>
+    <div><i>the marriage plot</i><br><em>jeffrey eugenides</em><span>lafayette, la</span><b>☆</b></div>
+    <div><i>norwegian wood</i><br>haruki murakami <span>chicago, il</span></div>
+    <div><i>the virgin suicides</i><br>jeffrey eugenides <span>chicago, il</span></div>
+    <div><i>the crying of lot 49</i><br>thomas pynchon <span>lafayette, la</span></div>
+  <h1>2017</h1>
+    <div><i>black boy</i><br>richard wright <span>lafayette, la</span><b>☆</b></div>
+    <div><i>wise blood</i><br>flannery o’connor <span>lafayette, la</span></div>
+    <div><i>lolita</i><br>vladimir nabokov <span>lafayette, la</span></div>
+    <div><i>on the road</i><br>jack kerouac <span>lafayette, la</span></div>
+    <div><i>franny and  zooey</i><br>j.d. salinger <span>lafayette, la</span></div>
+    <div><i>after art</i><br>david joselit <span>lafayette, la, reread</span></div>
+    <div><i>lost in the funhouse</i><br>john barth<span>tokyo, jp</span><b>☆</b></div>
+    <div><i>swing time</i><br>zadie smith<span>tokyo, jp</span><b>☆</b></div>
+    <div><i>the beauty of history</i><br>viivi luik<span>tallinn, estonia</span></div>
+    <div><i>the bluest eye</i><br>toni morrison<span>in transit</span></div>
+    <div><i>the woman warrior</i><br>maxine hong kingston<span>belgrade, serbia</span></div>
+  <h1>reading</h1>
+    <div><i>the kalevala</i><br>elias lönnrot tr. keith bosley<span>in transit</span></div>
+    <div><i>on photography</i><br>susan sontag<span>in transit</span></div>
+    <div>various poems<br>robert frost<span>in transit</span></div>
+    <div><i>the painting of modern life</i><br>t.j. clark <span>in transit</span><b>☆</b></div>
 </div>
 </body>
 </html>
