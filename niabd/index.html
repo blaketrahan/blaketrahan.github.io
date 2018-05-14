@@ -1,297 +1,115 @@
 <!DOCTYPE html5>
 <html>
 	<head>
-		<title>niabd</title>
+        <title>Blake Ortego Jr / Now I Am Become Death</title>
+        <meta name="keywords" content="niabd, now i am become death, blake ortego, blake ortego jr, ortego, blake, noise, ambient, field recording, electronic, dance, dark, sex, orgams, sexual, sensual, repression, emotion, composer, producer, house, soundtrack, score, oni jijo, rareluth, louisiana, LA, lafayette, southern, south, music, synth, rock, kid midi, roman discipline, now i am become movement, existential rnd, existential, step pepper, avant garde, diy filmmaking, guerrilla filmmaking, diy, no budget, cheap, the pieces, the repressed, the ego, londri, selfhelp, motivational speaking, performance art, alabama, birmingham, world travel, primal lifestyle, nonspiritual, antitheist, anticapitalist, the bible, alchemical, lifespan based existence,">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-			body {
-				background: #fff;
-			}
-            canvas {
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 200;
-                opacity: 0;
-                transition: opacity 200ms ease-in-out 0s;
-            }
-            .marquee {
-z-index: 1000000;
-position: fixed;
-top: 0;
-left: 0;
-height: 100%;
-pointer-events: none;
-text-align: center;
-            }
-            .marquee img {
-                width: 200px;
-            }
-            .lol {
-                position: fixed;
-                left: 0;
-                right: 0;
-                max-height: 80vh;
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                pointer-events: none;
-            }
-            button {
-                cursor: pointer;
-                padding: 2px 8px;
-                appearance: none;
-                border: 1px solid #eee;
-                border-radius: 3px;
-                z-index: 2000;
-                font-size: 18px;
-            }
-            .btns {
-                position: fixed;
-                bottom: 5vh;
-                text-align: center;
-                display: block;
-                margin: auto;
-                left: 0;
-                right: 0;
-                z-index: 2000;
-            }
-            .eternal-sadness {
-                font-style: italic;
-                background: blue;
-                color: red;
-            }
-            .everlasting-love {
-                background: aqua;
-                color: gold;
-                font-weight: bold;
-                text-shadow: 2px 2px darkblue;
-            }
-            .love {
-                background: black;
-                color: white;
-            }
-            .fire {
-                display: none;
-                background: red;
-                text-shadow: 7px 5px #b30808;
-                color: yellow;
-                background: url("model/swans2.png");
-                right: 10px;
-                position: fixed;
-                font-size: 110px;
-                font-family: cursive;
-                border: 0;
-                height: 100vh;
-                top: 0;
-                bottom: 0;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-            audio {
-                display: none;
-            }
-            span {
-                color: #00ffd4;
-    display: inline-block;
-    font-size: 20px;
-    font-family: Comic Sans, sans-serif;
-    background: transparent;
-    padding: 10px 20px 100px 50px;
-    font-weight: bold;
-            }
-            * {
-                outline: 0 !important;
-            }
-		</style>
+        <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
-        <audio id="audioId" controls>
-            <source src="model/test2.mp3" />
-        </audio>
-        <div class="btns">
-            <button id="A" class="eternal-sadness">ETERNAL</button>
-            <button id="B" class="everlasting-love">EVERLASTING</button>
-            <button id="C" class="love">LOVE</button>
-            <button id="D" class="fire">LIES <br><span>turn your <br>motherfuckin <br>sound on</span></button>
+        <div class="container">
+        <img src="images/waterfall.webp" class="waterfall">
+            <div class="wall" style="">
+                <div class="w">
+                    <div class="window-outer">
+                        <div class="window-inner"></div>
+                    </div>
+                </div><!--
+                --><div class="w">
+                    <div class="window-outer">
+                        <div class="window-inner"></div>
+                    </div>
+                </div><!--
+                --><div class="w">
+                    <div class="window-outer">
+                        <div class="window-inner"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="marquee" direction="up" id="m" style="opacity:0;"><img src="model/vaped.jpg"></div>
-        <img class="lol" src="model/waterfall.webp">
-        <img class="lol" src="model/swans.webp" style="display: none;" id="swan">
-		<script src="three.min.js"></script>
-        <script src="OrbitControls.js"></script>
-		<script src="OBJLoader.js"></script>
+        <div class="social">
+            <a href="http://www.steppepper.com/category/now-i-am-become-death/" target="blank">
+                <img src="images/imusic.png">
+            </a>
+            <a href="https://www.youtube.com/playlist?list=PLv07ej0PxCxgDmUY9BJA4em9lVqdo0Y4H" target="blank">
+                <img src="images/ivideo.png">
+            </a>
+            <a href="https://www.patreon.com/blakeortegojr" target="blank">
+                <img src="images/ipatreon.png">
+            </a>
+            <a href="https://www.instagram.com/blakeortegojr/" target="blank">
+                <img src="images/iinstagram.png">
+            </a>
+            <a href="mailto:blakeortegojr@gmail.com" target="blank">
+                <img src="images/iemail.png">
+            </a>
+        </div>
+
+		<script src="js/three.min.js"></script>
+        <script src="js/OrbitControls.js"></script>
+		<script src="js/OBJLoader.js"></script>
 		<script>
 
 			var container;
-
 			var camera, scene, renderer, controls;
-
-			var mouseX = 0, mouseY = 0;
-
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
-
-            var model, SCmodel;
-            model = 0;
-
-            var mat1, mat2, mat3, matblack, matskin, matfire, matshutter;
-
+            var model;
+            var material;
 			init();
-
 			setTimeout(animate, 500);
-
-
 			function init() {
 
 				container = document.createElement( 'div' );
+                container.className = "embed-model";
+                container.id = "EmbedModel";
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-
-
-				// scene
-
 				scene = new THREE.Scene();
-
-
-                // add some shit lightin
 
                 var ambient = new THREE.AmbientLight( 0xCCCCCC );
                 scene.add( ambient );
 
                 var light;
-
                 light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
                 light.position.set(-200, 500, -150);
                 light.position.multiplyScalar(1.3);
-
                 light.castShadow = true;
                 light.shadowCameraVisible = true;
-
                 light.shadowMapWidth = 1024;
                 light.shadowMapHeight = 1024;
-
                 var d = 20;
-
                 light.shadowCameraLeft = -d;
                 light.shadowCameraRight = d;
                 light.shadowCameraTop = d;
                 light.shadowCameraBottom = -d;
-
                 light.shadowCameraFar = 1000;
                 light.shadowDarkness = 0.2;
-
                 scene.add(light);
 
                 var SCmaterial = new THREE.ShadowMaterial();
                 SCmaterial.opacity = 0.625;
-
                 var SCmesh = new THREE.Mesh( new THREE.PlaneGeometry(100, 100), SCmaterial );
                 SCmesh.receiveShadow = true;
                 SCmesh.position.y = -7.25;
                 SCmesh.rotation.x = -1.570796;
                 scene.add( SCmesh );
 
-
-				// texture
-
 				var manager = new THREE.LoadingManager();
-				manager.onProgress = function ( item, loaded, total ) {
-
-					console.log( item, loaded, total );
-
-				};
-
-				var texture = new THREE.Texture();
                 var marbletexture = new THREE.Texture();
-                var fire = new THREE.Texture();
-                var marbletexture2 = new THREE.Texture();
-
-
-				var onProgress = function ( xhr ) {
-					if ( xhr.lengthComputable ) {
-						var percentComplete = xhr.loaded / xhr.total * 100;
-						console.log( Math.round(percentComplete, 2) + '% downloaded' );
-					}
-				};
-
-				var onError = function ( xhr ) {
-				};
-
-
 				var loader = new THREE.ImageLoader( manager );
-				loader.load( 'model/face-front.png', function ( image ) {
 
-					texture.image = image;
-					texture.needsUpdate = true;
-
-				} );
-                loader.load( 'model/marble.jpg', function ( image ) {
+                loader.load( 'model/texture.png', function ( image ) {
 
                     marbletexture.image = image;
                     marbletexture.needsUpdate = true;
 
                 } );
-                loader.load( 'model/marble2.png', function ( image ) {
 
-                    marbletexture2.image = image;
-                    marbletexture2.needsUpdate = true;
-
-                } );
-                loader.load( 'model/swans2.png', function ( image ) {
-
-                    fire.image = image;
-                    fire.needsUpdate = true;
-
-                } );
-
-
-				// model
-                mat1 = new THREE.MeshPhongMaterial({
-                    color : 0xFFFFFF,
-                    shininess : 0,
-                    specular : 0xFFFFFF,
-                    color: 0xffffff,
-                    flatShading: false,
-                    map : texture,
-                });
-                var alpha = 1;
-                mat2 = new THREE.MeshPhongMaterial( {
-                    bumpScale: 2,
-                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
-                    specular: 0x333333,
-                    reflectivity: 1,
-                    shininess: 50,
-                } );
-                var alpha = 1;
-                matblack = new THREE.MeshPhongMaterial( {
-                    bumpScale: 2,
-                    color: new THREE.Color().setHSL( 0.8,0.25,0.05 ),
-                    specular: 0x333333,
-                    reflectivity: 1,
-                    shininess: 10,
-                } );
-                matskin = new THREE.MeshPhongMaterial( {
-                    bumpScale: 2,
-                    color: new THREE.Color().setRGB(254/255, 199/255, 185/255),
-                    specular: 0x223311,
-                    reflectivity: 0.25,
-                    shininess: 2,
-                } );
-                mat3 = new THREE.MeshPhongMaterial( {
-                    map: marbletexture2,
-                    bumpMap: marbletexture2,
-                    bumpScale: 2,
-                    bumpScale: 2,
-                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
-                    specular: 0x333333,
-                    reflectivity: 1,
-                    shininess: 50,
-                } );
-                matshutter = new THREE.MeshPhongMaterial( {
+                material = new THREE.MeshPhongMaterial( {
                     map: marbletexture,
                     bumpMap: marbletexture,
                     bumpScale: 2,
@@ -301,69 +119,37 @@ text-align: center;
                     reflectivity: 1,
                     shininess: 50,
                 } );
-                matfire = new THREE.MeshPhongMaterial( {
-                    map: fire,
-                    bumpMap: fire,
-                    bumpScale: 2,
-                    bumpScale: 2,
-                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
-                    specular: 0x333333,
-                    reflectivity: 1,
-                    shininess: 50,
-                } );
-
 
 				var loader = new THREE.OBJLoader( manager );
-				loader.load( 'model/model-18-05-13.obj', function ( object ) {
-
+				loader.load( 'model/model.obj', function ( object ) {
 					object.traverse( function ( child ) {
-
 						if ( child instanceof THREE.Mesh ) {
-
-                           
-                            child.material = mat2;
+                            child.material = material;
                             child.castShadow = true;
                             child.receiveShadow = false;
                             child.position.y = 4;
-
 						}
-
 					} );
 					scene.add( object );
-
                     model = object;
-            model.rotation.y = -.8;
-
-				}, onProgress, onError );
-
-				//
+				});
 
 				renderer = new THREE.WebGLRenderer( { alpha: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
-                // renderer.setClearColor(0xFFFFFF, 1); 
                 renderer.shadowMapEnabled = true;
                 renderer.shadowMapSoft = true;
 				container.appendChild( renderer.domElement );
 
-
                 // controls
-
                 controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-                //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-
-                controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+                controls.enableDamping = true;
                 controls.dampingFactor = 0.3;
-
                 controls.screenSpacePanning = false;
-
                 controls.minDistance = 20;
                 controls.maxDistance = 500
-
                 controls.maxPolarAngle = Math.PI / 2;
                 camera.position.set( 0, 15, 50 );
-
 				window.addEventListener( 'resize', onWindowResize, false );
 			}
 
@@ -384,104 +170,9 @@ text-align: center;
 
 			function render() {
                 model.rotation.y += 0.00225;
-                controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
+                controls.update();
 				renderer.render( scene, camera );
 			}
-
-
 		</script>
-
-        <script>
-            var clicked = {
-            a : 0,
-            b : 0,
-            c : 0,
-            };
-            document.getElementById("A").addEventListener("click",function(e){
-                document.getElementsByTagName("canvas")[0].style.opacity = 1;
-                model.traverse( function ( child ) {
-                    if ( child instanceof THREE.Mesh ) {
-                        child.material = mat2;
-                        child.castShadow = true;
-                        child.receiveShadow = false;
-                        child.position.y = 4;
-                    }
-                });
-                clicked["a"] = 1;
-                if (clicked["a"] == 1 && clicked["b"] == 1 && clicked["c"] == 1) {
-            setTimeout(function(){document.getElementById("D").style.display = "block";},2000);
-                }
-            });
-
-            document.getElementById("B").addEventListener("click",function(e){
-                var i = 0;
-                model.traverse( function ( child ) {
-                    if ( child instanceof THREE.Mesh ) {
-                        console.log(i);i++;
-                        if (i == 9) {
-                            child.material = mat1;
-                        }
-                        if (i < 8) {
-                            child.material = matskin;
-                        }
-
-                        if (i < 7) {
-                            child.material = matblack;
-                        }
-                        if ( i == 8 ) {
-                            child.material = mat3;
-                        }
-                    }
-                });
-                clicked["b"] = 1;
-                if (clicked["a"] == 1 && clicked["b"] == 1 && clicked["c"] == 1) {
-            setTimeout(function(){document.getElementById("D").style.display = "block";},2000);
-                }
-            });
-
-            document.getElementById("C").addEventListener("click",function(e){
-                model.traverse( function ( child ) {
-                    if ( child instanceof THREE.Mesh ) {
-                        child.material = mat3;
-                        child.castShadow = true;
-                        child.receiveShadow = false;
-                        child.position.y = 4;
-                    }
-                });
-                clicked["c"] = 1;
-
-                if (clicked["a"] == 1 && clicked["b"] == 1 && clicked["c"] == 1) {
-            setTimeout(function(){document.getElementById("D").style.display = "block";},2000);
-                }
-            });
-
-            document.getElementById("D").addEventListener("click",function(e){
-                var i = 0;
-                model.traverse( function ( child ) {
-                    if ( child instanceof THREE.Mesh ) {
-                        console.log(i);i++;
-                        if (i == 9) {
-                            child.material = 0;
-                        }
-                        if (i < 8) {
-                            child.material = 0;
-                        }
-
-                        if (i < 7) {
-                            child.material = 0;
-                        }
-                        if ( i == 8 ) {
-                            child.material = matshutter;
-                        }
-                    }
-                });
-                document.getElementById("swan").style.display = "block";
-                document.getElementById("m").style.opacity = "1";
-                var myAudio = document.getElementById("audioId");
-                myAudio.play();
-            });
-
-        </script>
-
 	</body>
 </html>

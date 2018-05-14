@@ -1,0 +1,136 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+* {
+    outline: 0;
+}
+p {
+    font-family: Helvetica, sans-serif;
+    color: #000000;
+}
+.social {
+    position: fixed;
+    bottom: 1vh;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+.social a {
+    text-decoration: none;
+}
+.social img {
+    width: 32px;
+}
+.container {
+    border: 30px solid #eae7f1;
+    border-bottom: 30px solid transparent;
+    border-top: 0;
+    border-right-color: #eeecf3;
+    border-left-color: #f4f3f7;
+    overflow: hidden;
+    position: relative;
+}
+.wall {
+    text-align: center;
+}
+.window-inner {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-sizing: border-box;
+    border-top: 0;
+    border-left: 3px solid #393939;
+    border-right: 3px solid #393939;
+    border-bottom: 10px solid #424242;
+    position: absolute;
+}
+.window-outer {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    border: 6px solid black;
+    border-left: 8px solid black;
+    border-right: 8px solid black;
+    border-bottom: 10px solid black;
+    box-sizing: border-box;
+    position: relative;
+}
+.w {
+    vertical-align: top;
+    display: inline-block;
+    width: 33.3333%;
+    height: 69%;
+    box-sizing: border-box;
+    border: 15px solid rgb(234, 231, 241);
+    border-top-width: 30px;
+    border-bottom-width: 65px;
+}
+.w:first-child {
+    border-left-width: 30px;
+}
+.w:last-child {
+    border-right-width: 30px;
+}
+.waterfall {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+}
+.embed-model {
+    position: fixed;
+    bottom: -15vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: none;
+}
