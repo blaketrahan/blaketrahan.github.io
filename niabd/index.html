@@ -7,16 +7,28 @@
 		<style>
 			body {
 				background: #fff;
-                margin: 0;
-                padding: 0;
 			}
             canvas {
                 position: fixed;
                 top: 0;
                 left: 0;
-                z-index: 10000;
+                z-index: 200;
+                opacity: 0;
+                transition: opacity 200ms ease-in-out 0s;
             }
-            img {
+            .marquee {
+z-index: 1000000;
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+pointer-events: none;
+text-align: center;
+            }
+            .marquee img {
+                width: 200px;
+            }
+            .lol {
                 position: fixed;
                 left: 0;
                 right: 0;
@@ -26,12 +38,82 @@
                 margin: auto;
                 pointer-events: none;
             }
+            button {
+                cursor: pointer;
+                padding: 2px 8px;
+                appearance: none;
+                border: 1px solid #eee;
+                border-radius: 3px;
+                z-index: 2000;
+                font-size: 18px;
+            }
+            .btns {
+                position: fixed;
+                bottom: 5vh;
+                text-align: center;
+                display: block;
+                margin: auto;
+                left: 0;
+                right: 0;
+                z-index: 2000;
+            }
+            .eternal-sadness {
+                font-style: italic;
+                background: blue;
+                color: red;
+            }
+            .everlasting-love {
+                background: aqua;
+                color: gold;
+                font-weight: bold;
+                text-shadow: 2px 2px darkblue;
+            }
+            .love {
+                background: black;
+                color: white;
+            }
+            .fire {
+                display: none;
+                background: red;
+                color: yellow;
+                    top: 50vh;
+                    background: url("model/swans2.png");
+    right: 10px;
+    position: fixed;
+    font-size: 110px;
+    font-family: cursive;
+            }
+            audio {
+                display: none;
+            }
+            span {
+                color: #00ffd4;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Comic Sans, sans-serif;
+    background: transparent;
+    padding: 10px 20px 100px 50px;
+    font-weight: bold;
+            }
+            * {
+                outline: 0 !important;
+            }
 		</style>
 	</head>
 
 	<body>
-
-        <img src="model/waterfall.webp">
+        <audio id="audioId" controls>
+            <source src="model/test2.mp3" />
+        </audio>
+        <div class="btns">
+            <button id="A" class="eternal-sadness">ETERNAL</button>
+            <button id="B" class="everlasting-love">EVERLASTING</button>
+            <button id="C" class="love">LOVE</button>
+            <button id="D" class="fire">FIRE <br><span>turn your <br>motherfuckin <br>sound on</span></button>
+        </div>
+        <div class="marquee" direction="up" id="m" style="opacity:0;"><img src="model/vaped.jpg"></div>
+        <img class="lol" src="model/waterfall.webp">
+        <img class="lol" src="model/swans.webp" style="display: none;" id="swan">
 		<script src="three.min.js"></script>
         <script src="OrbitControls.js"></script>
 		<script src="OBJLoader.js"></script>
@@ -47,9 +129,13 @@
 			var windowHalfY = window.innerHeight / 2;
 
             var model, SCmodel;
+            model = 0;
+
+            var mat1, mat2, mat3, matblack, matskin, matfire, matshutter;
 
 			init();
-			animate();
+
+			setTimeout(animate, 500);
 
 
 			function init() {
@@ -67,50 +153,41 @@
 
                 // add some shit lightin
 
-var ambient = new THREE.AmbientLight( 0xFFFFFF );
-scene.add( ambient );
+                var ambient = new THREE.AmbientLight( 0xCCCCCC );
+                scene.add( ambient );
 
+                var light;
 
-/* 
-sdfasdf
-*/
+                light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
+                light.position.set(-200, 500, -150);
+                light.position.multiplyScalar(1.3);
 
-    var light;
+                light.castShadow = true;
+                light.shadowCameraVisible = true;
 
-    light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
-    light.position.set(-300, 500, -250);
-    light.position.multiplyScalar(1.3);
+                light.shadowMapWidth = 1024;
+                light.shadowMapHeight = 1024;
 
-    light.castShadow = true;
-    light.shadowCameraVisible = true;
+                var d = 20;
 
-    light.shadowMapWidth = 1024;
-    light.shadowMapHeight = 1024;
+                light.shadowCameraLeft = -d;
+                light.shadowCameraRight = d;
+                light.shadowCameraTop = d;
+                light.shadowCameraBottom = -d;
 
-    var d = 20;
+                light.shadowCameraFar = 1000;
+                light.shadowDarkness = 0.2;
 
-    light.shadowCameraLeft = -d;
-    light.shadowCameraRight = d;
-    light.shadowCameraTop = d;
-    light.shadowCameraBottom = -d;
+                scene.add(light);
 
-    light.shadowCameraFar = 1000;
-    light.shadowDarkness = 0.2;
+                var SCmaterial = new THREE.ShadowMaterial();
+                SCmaterial.opacity = 0.625;
 
-    scene.add(light);
-
-/*
-asdfasdf
-*/
-
-    var SCmaterial = new THREE.ShadowMaterial();
-    SCmaterial.opacity = 0.625;
-
-    var SCmesh = new THREE.Mesh( new THREE.PlaneGeometry(100, 100), SCmaterial );
-    SCmesh.receiveShadow = true;
-    SCmesh.position.y = -7.25;
-    SCmesh.rotation.x = -1.570796;
-    scene.add( SCmesh );
+                var SCmesh = new THREE.Mesh( new THREE.PlaneGeometry(100, 100), SCmaterial );
+                SCmesh.receiveShadow = true;
+                SCmesh.position.y = -7.25;
+                SCmesh.rotation.x = -1.570796;
+                scene.add( SCmesh );
 
 
 				// texture
@@ -123,6 +200,10 @@ asdfasdf
 				};
 
 				var texture = new THREE.Texture();
+                var marbletexture = new THREE.Texture();
+                var fire = new THREE.Texture();
+                var marbletexture2 = new THREE.Texture();
+
 
 				var onProgress = function ( xhr ) {
 					if ( xhr.lengthComputable ) {
@@ -142,8 +223,89 @@ asdfasdf
 					texture.needsUpdate = true;
 
 				} );
+                loader.load( 'model/marble.jpg', function ( image ) {
+
+                    marbletexture.image = image;
+                    marbletexture.needsUpdate = true;
+
+                } );
+                loader.load( 'model/marble2.png', function ( image ) {
+
+                    marbletexture2.image = image;
+                    marbletexture2.needsUpdate = true;
+
+                } );
+                loader.load( 'model/swans2.png', function ( image ) {
+
+                    fire.image = image;
+                    fire.needsUpdate = true;
+
+                } );
+
 
 				// model
+                mat1 = new THREE.MeshPhongMaterial({
+                    color : 0xFFFFFF,
+                    shininess : 0,
+                    specular : 0xFFFFFF,
+                    color: 0xffffff,
+                    flatShading: false,
+                    map : texture,
+                });
+                var alpha = 1;
+                mat2 = new THREE.MeshPhongMaterial( {
+                    bumpScale: 2,
+                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
+                    specular: 0x333333,
+                    reflectivity: 1,
+                    shininess: 50,
+                } );
+                var alpha = 1;
+                matblack = new THREE.MeshPhongMaterial( {
+                    bumpScale: 2,
+                    color: new THREE.Color().setHSL( 0.8,0.25,0.05 ),
+                    specular: 0x333333,
+                    reflectivity: 1,
+                    shininess: 10,
+                } );
+                matskin = new THREE.MeshPhongMaterial( {
+                    bumpScale: 2,
+                    color: new THREE.Color().setRGB(254/255, 199/255, 185/255),
+                    specular: 0x223311,
+                    reflectivity: 0.25,
+                    shininess: 2,
+                } );
+                mat3 = new THREE.MeshPhongMaterial( {
+                    map: marbletexture2,
+                    bumpMap: marbletexture2,
+                    bumpScale: 2,
+                    bumpScale: 2,
+                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
+                    specular: 0x333333,
+                    reflectivity: 1,
+                    shininess: 50,
+                } );
+                matshutter = new THREE.MeshPhongMaterial( {
+                    map: marbletexture,
+                    bumpMap: marbletexture,
+                    bumpScale: 2,
+                    bumpScale: 2,
+                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
+                    specular: 0x333333,
+                    reflectivity: 1,
+                    shininess: 50,
+                } );
+                matfire = new THREE.MeshPhongMaterial( {
+                    map: fire,
+                    bumpMap: fire,
+                    bumpScale: 2,
+                    bumpScale: 2,
+                    color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
+                    specular: 0x333333,
+                    reflectivity: 1,
+                    shininess: 50,
+                } );
+
 
 				var loader = new THREE.OBJLoader( manager );
 				loader.load( 'model/model-18-05-13.obj', function ( object ) {
@@ -152,17 +314,8 @@ asdfasdf
 
 						if ( child instanceof THREE.Mesh ) {
 
-                            var material = new THREE.MeshPhongMaterial({
-                                ambient : 0xFFFFFF,
-                                color : 0xFFFFFF,
-                                shininess : 0,
-                                specular : 0xFFFFFF,
-                                shading : THREE.SmoothShading,
-                                color: 0xffffff,
-                                flatShading: false,
-                                map : texture,
-                            });
-                            child.material = material;
+                           
+                            child.material = mat2;
                             child.castShadow = true;
                             child.receiveShadow = false;
                             child.position.y = 4;
@@ -173,6 +326,7 @@ asdfasdf
 					scene.add( object );
 
                     model = object;
+            model.rotation.y = -.8;
 
 				}, onProgress, onError );
 
@@ -223,12 +377,105 @@ asdfasdf
 			}
 
 			function render() {
-                model.rotation.y += 0.0125;
+                model.rotation.y += 0.00225;
                 controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
 				renderer.render( scene, camera );
 			}
 
+
 		</script>
+
+        <script>
+            var clicked = {
+            a : 0,
+            b : 0,
+            c : 0,
+            };
+            document.getElementById("A").addEventListener("click",function(e){
+                document.getElementsByTagName("canvas")[0].style.opacity = 1;
+                model.traverse( function ( child ) {
+                    if ( child instanceof THREE.Mesh ) {
+                        child.material = mat2;
+                        child.castShadow = true;
+                        child.receiveShadow = false;
+                        child.position.y = 4;
+                    }
+                });
+                clicked["a"] = 1;
+                if (clicked["a"] == 1 && clicked["b"] == 1 && clicked["c"] == 1) {
+            setTimeout(function(){document.getElementById("D").style.display = "block";},2000);
+                }
+            });
+
+            document.getElementById("B").addEventListener("click",function(e){
+                var i = 0;
+                model.traverse( function ( child ) {
+                    if ( child instanceof THREE.Mesh ) {
+                        console.log(i);i++;
+                        if (i == 9) {
+                            child.material = mat1;
+                        }
+                        if (i < 8) {
+                            child.material = matskin;
+                        }
+
+                        if (i < 7) {
+                            child.material = matblack;
+                        }
+                        if ( i == 8 ) {
+                            child.material = mat3;
+                        }
+                    }
+                });
+                clicked["b"] = 1;
+                if (clicked["a"] == 1 && clicked["b"] == 1 && clicked["c"] == 1) {
+            setTimeout(function(){document.getElementById("D").style.display = "block";},2000);
+                }
+            });
+
+            document.getElementById("C").addEventListener("click",function(e){
+                model.traverse( function ( child ) {
+                    if ( child instanceof THREE.Mesh ) {
+                        child.material = mat3;
+                        child.castShadow = true;
+                        child.receiveShadow = false;
+                        child.position.y = 4;
+                    }
+                });
+                clicked["c"] = 1;
+
+                if (clicked["a"] == 1 && clicked["b"] == 1 && clicked["c"] == 1) {
+            setTimeout(function(){document.getElementById("D").style.display = "block";},2000);
+                }
+            });
+
+            document.getElementById("D").addEventListener("click",function(e){
+                var i = 0;
+                model.traverse( function ( child ) {
+                    if ( child instanceof THREE.Mesh ) {
+                        console.log(i);i++;
+                        if (i == 9) {
+                            child.material = 0;
+                        }
+                        if (i < 8) {
+                            child.material = 0;
+                        }
+
+                        if (i < 7) {
+                            child.material = 0;
+                        }
+                        if ( i == 8 ) {
+                            child.material = matshutter;
+                        }
+                    }
+                });
+                document.getElementById("swan").style.display = "block";
+                document.getElementById("m").style.opacity = "1";
+                var myAudio = document.getElementById("audioId");
+                myAudio.play();
+            });
+
+        </script>
 
 	</body>
 </html>
