@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -44,11 +46,21 @@ table {
 * {
     outline: 0;
 }
-body {
+html {
+    font-family: Helvetica, 'Arimo', sans-serif;
+    color: #000000;
+    font-size: 14px;
+}
+strong {
+    font-weight: bold;
+}
+i {
+    font-style: italic;
 }
 p {
-    font-family: Helvetica, sans-serif;
-    color: #000000;
+    font-size: 1.5rem;
+    line-height: 140%;
+    margin-bottom: 2rem;
 }
 .social {
     position: fixed;
@@ -57,7 +69,7 @@ p {
     width: 100%;
     left: 0;
     right: 0;
-    z-index: 20;
+    z-index: 200;
 }
 .social a {
     text-decoration: none;
@@ -69,7 +81,7 @@ p {
     border: 30px solid #eae7f1;
     border-bottom: 30px solid transparent;
     border-top: 0;
-    border-right-color: #faf5fb;
+    border-right-color: #f5eef7;
     border-left-color: #f5eef7;
     overflow: hidden;
     position: relative;
@@ -122,7 +134,7 @@ p {
     vertical-align: top;
     display: inline-block;
     width: 33.3333%;
-    height: 69%;
+    height: 63%;
     box-sizing: border-box;
     border: 30px solid rgb(239, 232, 241);
     border-top-width: 30px;
@@ -144,17 +156,17 @@ p {
     background: #14171b;
 }
 .embed-model {
-    position: fixed;
-    bottom: -15vh;
+    position: absolute;
+    top: 0;
     left: 0;
-    right: 0;
     margin: auto;
-    pointer-events: none;
+    width: 100%;
+    height: 100%:;
     z-index: 100;
 }
 .floor {
     width: 100%;
-    height: 31%;
+    height: 37%;
     position: relative;
     z-index: 1;
     margin-top: -30px;
@@ -165,7 +177,37 @@ p {
     background: -webkit-linear-gradient(top, #eae1ec 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #eae1ec 0%,#ffffff 100%)ilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eae1ec', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
+#FillScreen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.section {
+    max-width: 80%;
+    margin: auto auto 4rem auto;
+    text-align: center;
+    padding: 20px;
+}
+.embed-video {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+.embed-video iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 @media (max-width: 768px) {
+    .section {
+        max-width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 15px;
+    }
     .w {
         display: none;
     }
