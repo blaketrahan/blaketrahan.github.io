@@ -51,10 +51,45 @@
                 position: fixed;
                 pointer-events: none;
             }
+
+            .drop {
+              background:-webkit-gradient(linear,0% 0%,0% 100%, from(blue ), to(aliceblue)  );
+                width:1px;
+                height:89px;
+                position: absolute;
+                bottom:200px;
+                -webkit-animation: fall .63s linear infinite;
+              -moz-animation: fall .63s linear infinite;
+              
+            }
+
+            /* animate the drops*/
+            @-webkit-keyframes fall {
+                to {margin-top:900px;}
+            }
+            @-moz-keyframes fall {
+                to {margin-top:900px;}
+            }
+            #RainDrops {
+                    position: fixed;
+    top: 0;
+    z-index: 100000;
+            }
         </style>
     </head>
 
     <body>
+        <section id="RainDrops"></section>
+        <div id="Rain" style="
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+    color: #e6eae9;
+    font-size: 40px;
+    color: #13afff87;
+    text-shadow: 142px 92px rgba(5, 9, 53, 0.15);
+    pointer-events: none;
+">、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、😭、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br>、、、、😭、、、、、、、、、、、、<br>、、、、、、、、、、、、、、、、<br></div>
         <div id="FillScreen">
             <div class="container">
                 <div id="Outside">
@@ -99,5 +134,37 @@
         <script src="js/OrbitControls.js"></script>
         <script src="js/OBJLoader.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+            
+            // number of drops created.
+            var nbDrop = 858; 
+
+            // function to generate a random number range.
+            function randRange( minNum, maxNum) {
+              return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+            }
+
+            // function to generate drops
+            function createRain() {
+
+                for( i=1;i<nbDrop;i++) {
+                    var dropLeft = randRange(0,1600);
+                    var dropTop = randRange(-1000,1400);
+
+                    var div = document.createElement("div");
+                    div.className = "drop";
+                    div.id="drop" + i;
+
+                    document.getElementById('RainDrops').appendChild(div);
+                    div.style.left = dropLeft;
+                    div.style.top = dropTop;
+                }
+
+            }
+            // Make it rain
+            createRain();
+
+        </script>
     </body>
 </html>
