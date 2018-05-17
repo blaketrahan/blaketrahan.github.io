@@ -116,28 +116,12 @@
 
         <script>
             var texture_library = [
-                <?php
-                    // Get all the model textures
-                    $path    = 'textures';
-                    $files = scandir($path);
-                    $files = array_diff(scandir($path), array('.', '..', '.DS_Store'));
-
-                    foreach ($files as $f) {
-                        echo "'{$f}',";
-                    }  
-                ?>
+                'first.png',
+                'second.jpg',
             ];
             var bg_library = [
-                <?php
-                    // Get all the model textures
-                    $path    = 'backgrounds';
-                    $backgrounds = scandir($path);
-                    $backgrounds = array_diff(scandir($path), array('.', '..', '.DS_Store'));
-
-                    foreach ($backgrounds as $f) {
-                        echo "'{$f}',";
-                    }  
-                ?>
+                'first.png',
+                'second.jpg',
             ];
             /*
                 Choose random background image
