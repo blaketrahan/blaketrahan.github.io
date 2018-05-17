@@ -1,10 +1,14 @@
 (function(){
+    "use strict";
+
     var container;
     var camera, scene, renderer, controls;
     var windowHalfX = window.innerWidth / 2;
     var windowHalfY = window.innerHeight / 2;
     var model;
     var material;
+    var light;
+    
     init();
     setTimeout(animate, 500);
     function init() {
@@ -14,20 +18,18 @@
         container.id = "EmbedModel";
         document.getElementById("FillScreen").appendChild( container );
 
-        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+        camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 2000 );
         scene = new THREE.Scene();
 
         var ambient = new THREE.AmbientLight( 0xCCCCCC );
         scene.add( ambient );
 
-        var light;
         light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
         light.position.set(-200, 500, -150);
         light.position.multiplyScalar(1.3);
         light.castShadow = true;
-        light.shadowCameraVisible = true;
-        light.shadowMapWidth = 1024;
-        light.shadowMapHeight = 1024;
+        light.shadowMapWidth = 2048;
+        light.shadowMapHeight = 2048;
         var d = 20;
         light.shadowCameraLeft = -d;
         light.shadowCameraRight = d;
@@ -41,7 +43,7 @@
         SCmaterial.opacity = 0.625;
         var SCmesh = new THREE.Mesh( new THREE.PlaneGeometry(100, 100), SCmaterial );
         SCmesh.receiveShadow = true;
-        SCmesh.position.y = -10.25;
+        SCmesh.position.y = -10;
         SCmesh.rotation.x = -1.570796;
         scene.add( SCmesh );
 
@@ -59,8 +61,7 @@
         material = new THREE.MeshPhongMaterial( {
             map: marbletexture,
             bumpMap: marbletexture,
-            bumpScale: 2,
-            bumpScale: 2,
+            bumpScale: 1.35,
             color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
             specular: 0x333333,
             reflectivity: 1,
@@ -73,12 +74,13 @@
                 if ( child instanceof THREE.Mesh ) {
                     child.material = material;
                     child.castShadow = true;
-                    child.receiveShadow = false;
-                    child.position.y = 1;
+                    child.receiveShadow = true;
+                    child.position.y = 0;
                 }
             } );
             scene.add( object );
             model = object;
+            model.position.y = -10;
         });
 
         renderer = new THREE.WebGLRenderer( { alpha: true } );
@@ -100,19 +102,7 @@
         var angle = Math.PI / 2 - 0.25;
         controls.minPolarAngle = angle; // radians
         controls.maxPolarAngle = angle; // radians
-        // controls.maxPolarAngle = Math.PI / 2;
-        camera.position.set( 0, 15, 41 );
-        window.addEventListener( 'resize', onWindowResize, false );
-    }
-
-    function onWindowResize() {
-        windowHalfX = window.innerWidth / 2;
-        windowHalfY = window.innerHeight / 2;
-
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        camera.position.z = 33;
     }
 
     function animate() {
@@ -123,13 +113,12 @@
     function render() {
         model.rotation.y += 0.002;
         controls.update();
+        light.position.copy( camera.position );
+        light.position.y = 180;
         renderer.render( scene, camera );
-    }
-})();
+    }   
 
-(function(){
-
-    "use strict";
+    //
 
     var w;
     var h;
@@ -162,7 +151,16 @@
 
         if (w !== w_prev) {
             document.getElementById("FillScreen").style.minHeight = window.innerHeight + "px";
+
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize( window.innerWidth, window.innerHeight );
         }
+
     }, 200);
     window.addEventListener("resize", resize);
     resize();
