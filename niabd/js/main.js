@@ -183,6 +183,7 @@
 
         if (w !== w_prev) {
             document.getElementById("FillScreen").style.minHeight = window.innerHeight + "px";
+            document.getElementById("FillScreen").style.height = "1px";
 
             windowHalfX = window.innerWidth / 2;
             windowHalfY = window.innerHeight / 2;
