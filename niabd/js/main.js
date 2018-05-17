@@ -6,8 +6,11 @@
     var windowHalfX = window.innerWidth / 2;
     var windowHalfY = window.innerHeight / 2;
     var model;
-    var material;
     var light;
+    
+    var materials = [];
+    var textures = [];
+    var current_material = 0;
     
     init();
     setTimeout(animate, 500);
@@ -18,7 +21,7 @@
         container.id = "EmbedModel";
         document.getElementById("FillScreen").appendChild( container );
 
-        camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 2000 );
+        camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 2000 );
         scene = new THREE.Scene();
 
         var ambient = new THREE.AmbientLight( 0xCCCCCC );
@@ -48,31 +51,42 @@
         scene.add( SCmesh );
 
         var manager = new THREE.LoadingManager();
-        var marbletexture = new THREE.Texture();
         var loader = new THREE.ImageLoader( manager );
+        var first_texture = 0;
+        for (var i = 0; i < texture_library.length; i++) {
 
-        loader.load( 'model/texture.png', function ( image ) {
+            textures.push(new THREE.Texture());
 
-            marbletexture.image = image;
-            marbletexture.needsUpdate = true;
+            var k = i;
 
-        } );
+            if (texture_library[k] == "first.png") {
+                first_texture = k;
+                current_material = first_texture;
+            }
 
-        material = new THREE.MeshPhongMaterial( {
-            map: marbletexture,
-            bumpMap: marbletexture,
-            bumpScale: 1.35,
-            color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
-            specular: 0x333333,
-            reflectivity: 1,
-            shininess: 50,
-        } );
+            loader.load( 'textures/'+texture_library[k], function ( image ) {
+                textures[this].image = image;
+                textures[this].needsUpdate = true;
+
+            }.bind(k) );
+
+
+            materials.push(new THREE.MeshPhongMaterial( {
+                map: textures[k],
+                bumpMap: textures[k],
+                bumpScale: 1.35,
+                color: new THREE.Color().setHSL( 1.0,0.15,0.82 ),
+                specular: 0x333333,
+                reflectivity: 1,
+                shininess: 50,
+            }));
+        }
 
         var loader = new THREE.OBJLoader( manager );
         loader.load( 'model/model.obj', function ( object ) {
             object.traverse( function ( child ) {
                 if ( child instanceof THREE.Mesh ) {
-                    child.material = material;
+                    child.material = materials[first_texture];
                     child.castShadow = true;
                     child.receiveShadow = true;
                     child.position.y = 0;
@@ -102,7 +116,25 @@
         var angle = Math.PI / 2 - 0.25;
         controls.minPolarAngle = angle; // radians
         controls.maxPolarAngle = angle; // radians
-        camera.position.z = 33;
+        camera.position.z = 38;
+    }
+
+    function change_texture() {
+        var mat_index = current_material;
+        if (materials.length > 1)
+        {
+            while (mat_index == current_material) {
+                mat_index = Math.floor(Math.random() * materials.length);
+            }
+
+            current_material = mat_index;
+
+            model.traverse( function ( child ) {
+                if ( child instanceof THREE.Mesh ) {
+                    child.material = materials[current_material];
+                }
+            } );
+        }
     }
 
     function animate() {
@@ -164,6 +196,24 @@
     }, 200);
     window.addEventListener("resize", resize);
     resize();
+
+
+    var flag = 0;
+    container.addEventListener("pointerdown", function(){
+        flag = 0;
+    }, false);
+    container.addEventListener("pointermove", function(){
+        flag = 1;
+    }, false);
+    container.addEventListener("pointerup", function(){
+        if(flag === 0){
+            // clicked
+            change_texture();
+        }
+        else if(flag === 1){
+            // dragged
+        }
+    }, false);
 
 })();
 

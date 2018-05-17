@@ -12,10 +12,11 @@
 	</head>
 
 	<body>
+
         <div id="FillScreen">
             <div class="container">
                 <div id="Outside">
-                    <img src="images/waterfall.webp" class="waterfall">
+                    <img id="Waterfall" src="" class="waterfall">
                 </div>
                 <div class="wall" style="">
                     <div class="w">
@@ -37,21 +38,21 @@
             </div>
 
             <div class="floor"></div>
+            <div class="block-canvas left"></div>
+            <div class="block-canvas right"></div>
         </div>
 
         <!-- Information -->
         <div class="section">
             <p class="small">
-                <strong>Blake Ortego Jr.</strong>, aka <i>Now I Am Become Death</i>,
-                <br> 
-                is a multifaceted artist. Personal, open, honest and often intense.
+                <img src="images/niabdstatement.png" class="img" style="width:943px;">
             </p>
         </div>
         <div class="section">
             <p class="small">
                 <a href="http://smarturl.it/thepieces" target="_blank">The Pieces</a>, 
                 a composition and short film
-                <br>
+                <br class="desktop-only">
                 about insecurity, obsession and ego.
             </p>
             <div class="embed-video" data-video="1B-W_FyhP0c">
@@ -62,9 +63,9 @@
             <p class="small">
                 <a href="http://smarturl.it/therepressed" target="_blank">The Repressed</a>, 
                 a composition about sexual repression
-                <br>
+                <br class="desktop-only">
                 accompanied by an interpretive performance 
-                <br>
+                <br class="desktop-only">
                 by artist Derek Joseph.
             </p>
             <div class="embed-video" data-video="0a5xKejvHuQ">
@@ -75,7 +76,7 @@
             <p class="small">
                 <a href="http://smarturl.it/theego" target="_blank">The Ego</a>, 
                 a composition and visual performance
-                <br>
+                <br class="desktop-only">
                 about ego and social perception.
             </p>
             <div class="embed-video" data-video="">
@@ -109,6 +110,42 @@
             </a>
         </div>
 
+        <footer>
+            <!-- placeholder -->
+        </footer>
+
+        <script>
+            var texture_library = [
+                <?php
+                    // Get all the model textures
+                    $path    = 'textures';
+                    $files = scandir($path);
+                    $files = array_diff(scandir($path), array('.', '..', '.DS_Store'));
+
+                    foreach ($files as $f) {
+                        echo "'{$f}',";
+                    }  
+                ?>
+            ];
+            var bg_library = [
+                <?php
+                    // Get all the model textures
+                    $path    = 'backgrounds';
+                    $backgrounds = scandir($path);
+                    $backgrounds = array_diff(scandir($path), array('.', '..', '.DS_Store'));
+
+                    foreach ($backgrounds as $f) {
+                        echo "'{$f}',";
+                    }  
+                ?>
+            ];
+            /*
+                Choose random background image
+            */
+            var bg_img = document.getElementById("Waterfall");
+            bg_img.src = "backgrounds/" + bg_library[Math.floor(Math.random() * bg_library.length)];
+        </script>
+        <script src="js/pep.min.js"></script>
 		<script src="js/three.min.js"></script>
         <script src="js/OrbitControls.js"></script>
 		<script src="js/OBJLoader.js"></script>
