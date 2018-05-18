@@ -3,18 +3,10 @@
 
     var container;
     var camera, scene, renderer, controls;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
     var model;
     var light;
-    
-    // ------------------------------------------------
-    // You can edit these values
-    var height_multiplier = 1.2;    // extend vertical space, 1 is equal to window height
-    var model_scale = 1.0;          // scale the model
-    var floor_position = -6.75;     // move the "floor" up and down
-    // ------------------------------------------------
-
-    var CW = window.innerWidth;
-    var CH = window.innerHeight * height_multiplier;
     
     var materials = [];
     var textures = [];
@@ -29,7 +21,7 @@
         container.id = "EmbedModel";
         document.getElementById("FillScreen").appendChild( container );
 
-        camera = new THREE.PerspectiveCamera( 50, CW / CH, 1, 2000 );
+        camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 2000 );
         scene = new THREE.Scene();
 
         var ambient = new THREE.AmbientLight( 0xCCCCCC );
@@ -54,7 +46,7 @@
         SCmaterial.opacity = 0.625;
         var SCmesh = new THREE.Mesh( new THREE.PlaneGeometry(100, 100), SCmaterial );
         SCmesh.receiveShadow = true;
-        SCmesh.position.y = floor_position;
+        SCmesh.position.y = -8;
         SCmesh.rotation.x = -1.570796;
         scene.add( SCmesh );
 
@@ -91,7 +83,7 @@
         }
 
         var loader = new THREE.OBJLoader( manager );
-        loader.load( 'model/model.obj', function ( object ) {
+        loader.load( 'model/omg.obj', function ( object ) {
             object.traverse( function ( child ) {
                 if ( child instanceof THREE.Mesh ) {
                     child.material = materials[first_texture];
@@ -102,15 +94,15 @@
             } );
             scene.add( object );
             model = object;
-            model.position.y = floor_position;
-            model.scale.x = model_scale;
-            model.scale.y = model_scale;
-            model.scale.z = model_scale;
+            model.position.y = -9;
+            model.scale.z = 1.2;
+            model.scale.y = 1.2;
+            model.scale.x = 1.2;
         });
 
         renderer = new THREE.WebGLRenderer( { alpha: true } );
         renderer.setPixelRatio( window.devicePixelRatio );
-        renderer.setSize( CW, CH );
+        renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.shadowMapEnabled = true;
         renderer.shadowMapSoft = true;
         container.appendChild( renderer.domElement );
@@ -196,13 +188,13 @@
             document.getElementById("FillScreen").style.minHeight = window.innerHeight + "px";
             document.getElementById("FillScreen").style.height = "1px";
 
-            var CW = window.innerWidth
-            var CH = window.innerHeight * height_multiplier;
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
 
-            camera.aspect = CW / CH;
+            camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
 
-            renderer.setSize( CW, CH );
+            renderer.setSize( window.innerWidth, window.innerHeight );
         }
 
     }, 200);
