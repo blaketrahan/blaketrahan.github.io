@@ -46,7 +46,7 @@
         SCmaterial.opacity = 0.625;
         var SCmesh = new THREE.Mesh( new THREE.PlaneGeometry(100, 100), SCmaterial );
         SCmesh.receiveShadow = true;
-        SCmesh.position.y = -10;
+        SCmesh.position.y = -8;
         SCmesh.rotation.x = -1.570796;
         scene.add( SCmesh );
 
@@ -83,7 +83,7 @@
         }
 
         var loader = new THREE.OBJLoader( manager );
-        loader.load( 'model/model.obj', function ( object ) {
+        loader.load( 'model/omg.obj', function ( object ) {
             object.traverse( function ( child ) {
                 if ( child instanceof THREE.Mesh ) {
                     child.material = materials[first_texture];
@@ -94,7 +94,10 @@
             } );
             scene.add( object );
             model = object;
-            model.position.y = -10;
+            model.position.y = -9;
+            model.scale.z = 1.2;
+            model.scale.y = 1.2;
+            model.scale.x = 1.2;
         });
 
         renderer = new THREE.WebGLRenderer( { alpha: true } );
