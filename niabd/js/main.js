@@ -10,7 +10,7 @@
     // You can edit these values
     var height_multiplier = 1.2;    // extend vertical space, 1 is equal to window height
     var model_scale = 1.0;          // scale the model
-    var floor_position = -6.75;     // move the "floor" up and down
+    var floor_position = -5.75;     // move the "floor" up and down
     // ------------------------------------------------
 
     var CW = window.innerWidth;
@@ -91,7 +91,7 @@
         }
 
         var loader = new THREE.OBJLoader( manager );
-        loader.load( 'model/model.obj', function ( object ) {
+        loader.load( 'model/wow.obj', function ( object ) {
             object.traverse( function ( child ) {
                 if ( child instanceof THREE.Mesh ) {
                     child.material = materials[first_texture];
