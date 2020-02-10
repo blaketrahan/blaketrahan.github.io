@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+
+  <title>Point n Click</title>
+
+  <link rel='stylesheet' href='/reset.css'>
+  <link rel='stylesheet' href='/custom.css'>
+  <script defer src='/build/bundle.js'></script>
+</head>
+<body>
+  <style>
+    html {
+      background: #eeefeb
+    }
+    body {
+      border-bottom: 150px solid transparent;
+    }
+    p {
+      margin-bottom: 50px;
+      font-family: monospace;
+      padding: 20px;
+      line-height: 20px;
+      background: #16212f;
+      color: #d2d4cb;
+    }
+    strong {
+      color: #b72828;
+    }
+    h1 {
+      background: #16212f;
+      display: block;
+      font-family: monospace;
+      color: red;
+      padding: 10px;
+      font-size: 20px;
+    }
+  </style>
+  <h1>REPLACE</h1>
+  <p>
+    Use <strong><i style="color:#2fffc7;">replace</i></strong> to replace an existing piece of HTML with another.<br>
+    There are two versions:<br><br>
+    ・<strong><i style="color:#2fffc7;">replace</i>(<i style="color:orange; font-style: italic;">'SomeElementID'</i>, <i style="color:orange; font-style: italic;">'./html/woman.html'</i>)</strong><br>
+    ・<strong><i style="color:#2fffc7;">replace</i>(<i style="color:#5b9bfb;">this</i>, <i style="color:orange; font-style: italic;">'./html/woman.html'</i>)</strong><br><br>
+    Using an <strong><i style="color:orange; font-style: italic;">element's ID</i></strong> will replace that element.<br>
+    Using the keyword <strong><i style="color:#5b9bfb;">this</i></strong> will replace the element itself.
+  </p>
+
+  <div onclick="replace(this, './html/woman.html')" class="pointer">
+    <pre>
+      a young girl ☺️
+      in the distance 
+    </pre>
+  </div>
+
+  <h1 style="margin-top: 50px;">CREATE</h1>
+  <p>
+    Use <strong><i style="color:#2fffc7;">create</i></strong> to create new HTML, only once.<br>
+    There are two versions:<br><br>
+    ・<strong><i style="color:#2fffc7;">create</i>(<i style="color:#5b9bfb;">this</i>, <i style="color:orange; font-style: italic;">'SomeElementID'</i>, <i style="color:orange; font-style: italic;">'./html/church.html'</i>)</strong><br>
+    ・<strong><i style="color:#2fffc7;">create</i>(<i style="color:#5b9bfb;">this</i>, <i style="color:#5b9bfb;">null</i>, <i style="color:orange; font-style: italic;">'./html/church.html'</i>)</strong><br><br>
+    Using an <strong><i style="color:orange; font-style: italic;">element's ID</i></strong> will create the new HTML inside the element.<br>
+    Using <strong><i style="color:#5b9bfb;">null</i></strong> will create the new HTML at the bottom of the <i style="color:orange; font-style: italic;">&lt;body&gt;</i> tag.<br>
+    <br><br>
+    In both cases, after the element is clicked, the classname <i style="color:orange; font-style: italic;">.clicked</i> is added to it. That way you can modify it with CSS to change the pointer to disabled, hide it, etc.
+    <br><br>
+    *Always pass the keyword <strong><i style="color:#5b9bfb;">this</i></strong>.
+
+  </p>
+
+  <div onclick="create(this, null, './html/church.html')" class="pointer">
+    <pre>
+      looks like a building 
+      behind those trees
+    </pre>
+  </div>
+
+</body>
+</html>
