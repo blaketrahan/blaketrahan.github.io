@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    const a =`
+NHK
+-
+wash towels before leaving
+-
+11時〜5時
+西日暮里・駒込・田端
+谷中墓地・彫刻美術館・国立新美術館
+美味しい食べ物
+-
+pullups, rows, ab wheels
+Practice flick
+-
+read
+write childless, english lessons
+---------------------
+Health: back to running every day for a month
+Fencing: buy box wrench
+Fencing: shorts, undershirt
+`;
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>something</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
   <section class="daily">
-    <div class="todo">
-      <pre>
-NHK
-pullups, rows, ab wheels
-Lesson
----------------------
-Fencing:
-→ buy box wrench
-→ Fencing shorts, undershirt
-      </pre>
+    <div id="Todo" class="todo">
+      <script>
+        const pre = document.createElement('pre');
+        pre.innerHTML = a.trim();
+        document.getElementById('Todo').appendChild(pre);
+      </script>
     </div><div class="feynman">
       <img src="./feynman.png">
     </div>
@@ -101,19 +120,15 @@ Fencing:
       <li>shattered sword: midway</li>
       <li>ancient war history</li>
       <li>haidt, righteousness</li>
-      <li>Math:
-        <ul>
-          <li><a href="https://www.math.ualberta.ca/mss/misc/A%20Mathematician%27s%20Apology.pdf" target="_blank">mathematician's apology</a></li>
-          <li><a href="https://www.amazon.com/dp/0465064957/ref=cm_sw_r_cp_api_i_hUUsFbZFFQM6R" target="_blank">love and math</a></li>
-        </ul>
-      </li>
+      <li><a href="https://www.math.ualberta.ca/mss/misc/A%20Mathematician%27s%20Apology.pdf" target="_blank">Math: mathematician's apology</a></li>
+      <li><a href="https://www.amazon.com/dp/0465064957/ref=cm_sw_r_cp_api_i_hUUsFbZFFQM6R" target="_blank">Math: love and math</a></li>
       <li>short stories in japanese</li>
       <li>scifi: foundation, hyperion, dune</li>
       <li>selfish gene</li>
       <li>snowden's book</li>
       <li>douglas murray</li>
       <li>jordan peterson</li>
-      ---
+      <li>Alexis de Tocqueville</li>
       <li>Fresh Complaint: Stories, eugenides</li>
       <li>Emperor's New Mind, Roger Penrose</li>
       <li>The Mathematician's Lament, Paul Lockhart</li>

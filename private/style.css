@@ -25,6 +25,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  width: 900px;
+  margin: auto;
+  max-width: 100%;
 }
 ol, ul {
   list-style: none;
@@ -47,7 +50,7 @@ html {
     color: #eed;
     font-family: Corbel, sans-serif;
 }
-.daily, .books {
+.books {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -62,6 +65,11 @@ html {
 }
 .todo, .feynman {
   width: 50%;
+}
+.todo {
+  border: 40px outset #d0d9d7;
+  padding: 10px 20px 10px 20px;
+  background: #f4f0e9;
 }
 * {
   box-sizing: border-box;
@@ -109,4 +117,21 @@ pre {
   font-size: 1.5rem;
   line-height: 2.8rem;
   font-family: sans-serif;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+@media (max-width: 800px) {
+  html {
+    padding: 15px;
+  }
+  .goals, .diet, .work, .todo, .feynman {
+    width: 100%;
+  }
+  .books {
+    display: block;
+  }
 }
