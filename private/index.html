@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    const a =`
+NHK !!
+pullup, row, ab wheels, maybe legs
+prepare japanese
+-
+write
+finish mutual aid
+-
+Errands:
+1. order/buy chili (few ingredients, 1 pot)
+2. order flax, chia, oats, other?
+3. order/buy smoothie 4x
+---------------------
+write to save/prolong the world
+dont have enough people in my life
+people/things that i have gratitude for
+publish something
+so that i can meet another intellectual force
+---------------------
+Health: back to running every day for a month
+Fencing: buy box wrench
+Fencing: shorts, undershirt
+`;
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>something</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
   <section class="daily">
-    <div class="todo">
-      <pre>
-priorities: eat healthy, write
-
-NHK (be serious!!)
-pullups, rows, ab wheels
-
-work 5 hours
-
-fish, eggs, veggie dinner
-
-write childless
-write englishlessons
-
-read
-
----------------------
-
-Fencing:
-→ buy box wrench
-→ Fencing shorts, undershirt
-      </pre>
+    <div id="Todo" class="todo">
+      <script>
+        const pre = document.createElement('pre');
+        pre.innerHTML = a.trim();
+        document.getElementById('Todo').appendChild(pre);
+      </script>
     </div><div class="feynman">
       <img src="./feynman.png">
     </div>
@@ -39,19 +49,12 @@ Fencing:
       5 year plan: <br>
       1. Writer, able to write a great novel <br>
       2. Fluent in Japanese <br>
-      3. A Ranked Fencer <br>
+      3. A rated fencer in USA<br>
       ---------------------------------<br>
       Short Term Goals: <br>
       1. Finish English lessons (6000).<br>
       2. Start Childless story.<br>
-      <br>
-      Show, don't tell. Novels should be mostly action.<br>
-      Thinking and expanding on an idea should be limited to one sentence.<br>
-      People solving hard problems.<br>
-      <br>
-      Expand knowledge areas (physics, philosophy)<br>
-      Write a lot, everyday (quantity over quality)<br>
-      Read a lot, everyday<br>
+      3. Move nearby club.<br>
     </div><div class="work">
       <div>
         <strong style="color: pink;">Possible:</strong><br>
@@ -82,6 +85,7 @@ Fencing:
   <section class="books">
     <ul>
       <h1>on deck</h1>
+      <li><a href="./heying.txt">heather heying's list</a></li>
       <li>my struggle, book 6 , karl ove knausgaard</li>
       <li>my struggle, book 5 , karl ove knausgaard</li>
       <li>go down, moses, william faulkner</li>
@@ -100,50 +104,50 @@ Fencing:
       <li>paradise lost</li>
       <li>milan kundera</li>
       <li>the road to reality, roger penrose</li>
+      <li>Childhood's End, arthur c. clarke</li>
       <li>solaris, Stanisław Lem (audio)</li>
       <li>shakespeare, othello, etc, arkangel audio, orson welles, http://shakespeare.mit.edu/index.html</li>
       <li>debra soh, end of gender</li>
+      <li>ovid, tiresias</li>
+      <li>Amusing Ourselves to Death, neil postman</li>
       <li>george orwell, aldous huxley</li>
       <li>steven pinker</li>
       <li>norwegian wood (reread)</li>
       <li>walden</li>
+      <li>fencing, aldo nadi</li>
       <li>finish the kalevala</li>
       <li>cynical theories (audiobook?)</li>
       <li>darwin</li>
       <li>shattered sword: midway</li>
       <li>ancient war history</li>
       <li>haidt, righteousness</li>
-      <li>Math:
-        <ul>
-          <li><a href="https://www.math.ualberta.ca/mss/misc/A%20Mathematician%27s%20Apology.pdf" target="_blank">mathematician's apology</a></li>
-          <li><a href="https://www.amazon.com/dp/0465064957/ref=cm_sw_r_cp_api_i_hUUsFbZFFQM6R" target="_blank">love and math</a></li>
-        </ul>
-      </li>
+      <li><a href="https://www.math.ualberta.ca/mss/misc/A%20Mathematician%27s%20Apology.pdf" target="_blank">Math: mathematician's apology</a></li>
+      <li><a href="https://www.amazon.com/dp/0465064957/ref=cm_sw_r_cp_api_i_hUUsFbZFFQM6R" target="_blank">Math: love and math</a></li>
       <li>short stories in japanese</li>
       <li>scifi: foundation, hyperion, dune</li>
       <li>selfish gene</li>
       <li>snowden's book</li>
-      <li>douglas murray</li>
       <li>jordan peterson</li>
-      ---
+      <li>Alexis de Tocqueville</li>
       <li>Fresh Complaint: Stories, eugenides</li>
       <li>Emperor's New Mind, Roger Penrose</li>
       <li>The Mathematician's Lament, Paul Lockhart</li>
     </ul>
     <ul>
       <h1>reading</h1>
-      <li>blindness, saramago</li>
       <li>神様, 川上弘美</li>
+      <li>madness of crowds, douglas murray</li>
       <li>Mutual Aid, Peter Kropotkin</li>
       <li>the elephant vanishes, haruki murakami</li>
       <h1>2020</h1>
+      <li>blindness, saramago<b>☆</b></li>
       <li>Lying, Sam Harris</li>
       <li>Free Will, Sam Harris</li>
-      <li>The Unreasonable Effectiveness of Mathematics in the Natural Sciences, Eugene Wigner</li>
-      <li>Existentialism is a Humanism, Jean-Paul Sartre</li>
+      <li class="other">The Unreasonable Effectiveness of Mathematics in the Natural Sciences, Eugene Wigner</li>
+      <li class="other">Existentialism is a Humanism, Jean-Paul Sartre</li>
       <li>my struggle, book 4 , karl ove knausgaard</li>
       <li>the true believer, eric hoffer</li>
-      <li>Ecclesiastes</li>
+      <li class="other">Ecclesiastes</li>
       <li>seize the day, saul bellow</li>
       <li>the sense of an ending, julian barnes</li>
       <li>ms ice sandwich, mieko kawakami</li>

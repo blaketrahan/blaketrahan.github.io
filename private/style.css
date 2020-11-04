@@ -25,6 +25,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  width: 900px;
+  margin: auto;
+  max-width: 100%;
 }
 ol, ul {
   list-style: none;
@@ -47,7 +50,7 @@ html {
     color: #eed;
     font-family: Corbel, sans-serif;
 }
-.daily, .books {
+.books {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -63,11 +66,16 @@ html {
 .todo, .feynman {
   width: 50%;
 }
+.todo {
+  border: 40px outset #d0d9d7;
+  padding: 10px 20px 10px 20px;
+  background: #f4f0e9;
+}
 * {
   box-sizing: border-box;
 }
 ul {
-  margin-right: 5rem;
+  max-width: 25%;
 }
 img {
   max-width: 100%;
@@ -78,8 +86,24 @@ h1 {
   margin-bottom: 0.5rem;
 }
 li {
-  font-size: 1rem;
-  line-height: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+li:hover {
+  white-space: initial;
+  overflow: initial;
+  text-overflow: initial;
+}
+li.other {
+  color: #807599;
+}
+li:hover,
+li.other:hover {
+  color: pink;
 }
 a {
   text-decoration: none;
@@ -109,4 +133,24 @@ pre {
   font-size: 1.5rem;
   line-height: 2.8rem;
   font-family: sans-serif;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+@media (max-width: 800px) {
+  html {
+    padding: 15px;
+  }
+  .goals, .diet, .work, .todo, .feynman {
+    width: 100%;
+  }
+  .books {
+    display: block;
+  }
+  ul {
+    max-width: 100%;
+  }
 }
