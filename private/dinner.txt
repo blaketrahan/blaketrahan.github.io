@@ -36,10 +36,10 @@ Protein 36g
 Fiber 24g
 
 ===================================
-Sweet potato, tomato, carrot dish
+Cooking
 ===================================
 -----------------------------------
-Sweet Potatoes and Carrots
+Sweet Potato, Carrot
 -----------------------------------
   Prepare:
   - wash carrots, sweet potatoes
@@ -53,7 +53,7 @@ Sweet Potatoes and Carrots
   - Natural release 10 min
 
 -----------------------------------
-Base
+Tomato, mushrooms, spinach etc
 -----------------------------------
   Prepare:
   - wash mushrooms
@@ -74,9 +74,9 @@ Base
   - saute until garlic releases smell
   - stir in spinach, parsley
 
-===================================
-Beans, Broccoli, Quinoa dish
-===================================
+-----------------------------------
+Broccoli, Quinoa
+-----------------------------------
   Prepare:
   - wash quinoa to remove soapy taste
   - cut, wash broccoli into long stalks
@@ -87,8 +87,11 @@ Beans, Broccoli, Quinoa dish
   - High pressure 2 mins
   - Natural release 10 min
 
-  Add beans to final dish:
-  - add can of kidney beans, chickpeas, rinsed.
+-----------------------------------
+Beans, Chickpeas
+-----------------------------------
+  - rinse kidney beans, chickpeas
+  - mix in with quinoa
 
 ===================================
 Eating
