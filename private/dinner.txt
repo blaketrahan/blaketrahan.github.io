@@ -35,6 +35,10 @@ Calories 742
 Protein 36g
 Fiber 24g
 
+Room for improvement: 
+- Vitamin B12
+- Calcium
+
 ===================================
 Cooking
 ===================================
