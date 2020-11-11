@@ -2,8 +2,8 @@
 CHANGES (BEGIN)
 ---------------
 buy 2 packs of spinach -> 1 pack = 60g 
-change cherry tom to can of tom
-increase spinach (or add bok choy)
+add bok choy or broccoli
+change cherry tom to can of tom (maybe 2)
 
 onion -> saute
 garlic -> saute
