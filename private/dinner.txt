@@ -1,137 +1,65 @@
----------------
-CHANGES (BEGIN)
----------------
-buy 2 packs of spinach -> 1 pack = 60g 
-add bok choy or broccoli
-change cherry tom to can of tom (maybe 2)
-
-onion -> saute
-garlic -> saute
-mushroom -> saute
-
-can tom -> stove
-garbanzo -> stove
-kidney -> stove
-
-reduce to 1/2 carrot
-and put in smoothie
-
 [Loft] 
   - Buy a big pot!
   - Buy a big glass
   - get better sized plastics (tbd)
-Quinoa -> small pot
-Dinner -> big pot
-Sweet pot -> instant pot (or just put in the pot?)
----------------
-CHANGES (END)
----------------
+
 -----------------------------------
-Ingredients (7 meals)
+Chili
 -----------------------------------
-15oz can kidney beans
-15oz can chickpeas
-2 cups uncooked quinoa
-1 head of broccoli, including stem
-4 sweet potato
-400g cherry tomatoes
-1 whole garlic
+2 15oz can whole tomato
+2 15oz can kidney beans
+1 15oz can garbanzo beans
+
+6 cloves garlic
 1 onion
+100g shiitake mushrooms (2 small pack)
+
+6 cups kale (120g grams, 2 packs)
+60g spinach (1 pack)
+60g bokchoy (1 pack)
 20 sprigs parsley
-86g shiitake mushrooms (1 small pack)
-120g spinach (1 pack)
-7 medium carrots
-olive oil
+
+3 medium carrots
 canola oil
-7 eggs
+
+Served with:
+1.5 cups uncooked quinoa
+Add egg when reheating
 -----------------------------------
-Spices
+Flavor
 -----------------------------------
-(Just guesswork, these needs to be adjusted)
-4 tsp ground coriander
-4 tsp ground cumin
-2 tsp chili
-2 tsp turmeric
-salt
-pepper
+1/4 tsp ground cumin
+1/4 tsp dried oregano
+1/4 tsp ground turmeric
+1/4 tsp Italian seasoning (or dried basil)
+1 Tbsp chili powder
+3 Tbsp red wine vinegar
+1/4 tsp salt
+1-3 tsp tabasco
 -----------------------------------
 Info
 -----------------------------------
-Yields 7 meals
-1x Pot
-2x Instant pot
-Calories 742
-Protein 36g
-Fiber 24g
+Yields 6 meals, 1 Pot
+Calories 622
+Protein 35g
+Fiber 19g
 
-Room for improvement: 
-- Vitamin B12
-- Calcium
-
-===================================
-Cooking
-===================================
 -----------------------------------
-Broccoli, Quinoa
+Quinoa
 -----------------------------------
-  Prepare:
-  - wash quinoa to remove soapy taste
-  - cut, wash broccoli into long stalks
-  - place quinoa and broccoli instant pot
+  Wash quinoa to remove soapy taste.
 
-  Instant pot settings:
+  Stove:
+  1.5 cup quinoa 
+  3 cups water
+  1/3 teaspoon fine sea salt, if desired
+  - Bring water, salt, quinoa to a boil.
+  - Cover, reducing heat to medium-low.
+  - Simmer until all the water is absorbed, usually about 15 to 20 minutes.
+  - Set aside off the heat for about five minutes before removing the cover.
+  - Fluff quinoa with a fork. Serve and enjoy.
+
+  Instant pot:
   - 2.5 cups cold water
   - High pressure 2 mins
   - Natural release 10 min
-
------------------------------------
-Sweet Potato, Carrot
------------------------------------
-  Prepare:
-  - wash carrots, sweet potatoes
-  - remove ends only of sweet pot, carrots
-  - place whole in instant pot
-
-  Instant pot settings:
-  - 1 cup (250ml) cold water
-  - On the rack
-  - High pressure 20 mins
-  - Natural release 10 min
-
------------------------------------
-Tomato, mushrooms, spinach etc
------------------------------------
-  Prepare:
-  - wash mushrooms
-  - wash spinach
-  - wash parsley, set aside
-  - wash cherry tomatoes
-  - chop and set aside spinach
-  - chop onion
-  - chop garlic
-  - chop mushroms
-  - cut in half cherry tomatoes
-  
-  Cook:
-  - heat canola oil in pot
-  - saute mushroom, onions until just golden
-  - add cherry tomatoes and saute
-  - add spices and garlic
-  - saute until garlic releases smell
-  - stir in spinach, parsley
-
------------------------------------
-Beans, Chickpeas
------------------------------------
-  - rinse kidney beans, chickpeas
-  - mix in with quinoa
-
-===================================
-Eating
-===================================
-  During microwaving:
-  - Mix 1 egg into quinoa
-
-  After microwaving:
-  - add olive oil and pink salt
-  - enjoy
