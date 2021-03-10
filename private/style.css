@@ -67,6 +67,7 @@ html {
   padding: 10px;
   margin-bottom: 2rem;
   float: left;
+
 }
 .books {
   clear: both;
@@ -122,9 +123,14 @@ li + h1 {
 .goals {
   font-size: 1.5rem;
   line-height: 1.75rem;
+      border: 12px outset #344d54;
+    background: #344d54;
 }
 .work {
   color: aquamarine;
+  border: 12px outset #4c0b3a;
+    background: #4c0c3b;
+    padding: 6px;
 }
 .diet {
   color: magenta;
@@ -146,6 +152,11 @@ pre {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
+}
+.feynman {
+      border: 12px outset #15202b;
+    background: #15202b;
+    padding-bottom: 10px;
 }
 @media (max-width: 800px) {
   html {
