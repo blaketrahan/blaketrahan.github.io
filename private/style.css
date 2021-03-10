@@ -73,11 +73,11 @@ html {
   clear: both;
 }
 .todo {
-  border: 20px outset #d0d9d7;
-  padding: 1px 20px 10px 20px;
-  background: #f4f0e9;
-  color: black;
-  font-size: 16px;
+border: 20px outset #62693e;
+    padding: 1px 20px 10px 20px;
+    background: #575d3b;
+    color: white;
+    font-size: 16px;
 }
 * {
   box-sizing: border-box;
@@ -124,12 +124,12 @@ li + h1 {
   font-size: 1.5rem;
   line-height: 1.75rem;
       border: 12px outset #344d54;
-    background: #344d54;
+    background: #283e44;
 }
 .work {
   color: aquamarine;
   border: 12px outset #4c0b3a;
-    background: #4c0c3b;
+    background: #3c0c2f;
     padding: 6px;
 }
 .diet {
@@ -154,7 +154,7 @@ pre {
   word-wrap: break-word;
 }
 .feynman {
-      border: 12px outset #15202b;
+      border: 12px outset #0e141b;
     background: #15202b;
     padding-bottom: 10px;
 }
