@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+body {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+article {
+  padding: 15;
+  margin: auto;
+  width: 60ch;
+  max-width: 100%;
+  text-align: left;
+}
+ul {
+  display: inline-block;
+}
+h1 {
+    font-size: 2.5em;
+    line-height: calc(1ex / 0.42);
+    margin: calc(1ex / 0.42) 0;
+}
+h2 {
+    font-size: 2em;
+    line-height: calc(1ex / 0.42);
+    margin: calc(1ex / 0.42) 0;
+}
+h3 {
+    font-size: 1.75em;
+    line-height: calc(1ex / 0.38);
+    margin: calc(1ex / 0.38) 0;
+}
+h4 {
+    font-size: 1.5em;
+    line-height: calc(1ex / 0.37);
+    margin: calc(1ex / 0.37) 0;
+}
+p {
+    font-size: 1em;
+    line-height: calc(1ex / 0.32);
+    margin: calc(1ex / 0.32) 0;
+    text-indent: 30px;
+    width: 60ch;
+    max-width: 100%;
+}
+/* The browser correctly supports hyphenation */
+p[lang="en"] {
+    text-align: justify;
+    hyphens: auto;
+}
+/* Apply a default color scheme */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html {
+  background-color: #eee8d5;
+  color: #657b83;
+}
+body {
+  background-color: #fdf6e3;
+}
+a {
+  color: #b58900;
+}
+a:visited {
+  color: #cb4b16;
+}
+a:hover {
+  color: #cb4b16;
+}
+h1 {
+  color: #d33682;
+}
+h5,
+h6 {
+  color: #859900;
+}
+h2,
+h3,
+h4 {
+  color: #2f2d38;
+}
+/* @media (prefers-color-scheme: dark) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  html {
+    background-color: #073642;
+    color: #839496;
+  }
+  body {
+    background-color: #002b36;
+  }
+  a {
+    color: #b58900;
+  }
+  a:visited {
+    color: #cb4b16;
+  }
+  a:hover {
+    color: #cb4b16;
+  }
+  h1 {
+    color: #d33682;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #859900;
+  }
+} */
+.pages {
+  width: 300px;
+  max-width: 100%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+.page {
+  display: block;
+  text-align: center;
+}
+.page a {
+  color: #bfbeb2;
+}
+.posted {
+  font-size: 0.8em;
+  margin: calc(0.5ex / 0.32) 0;
+  display: block;
+  text-align: center;
+}
