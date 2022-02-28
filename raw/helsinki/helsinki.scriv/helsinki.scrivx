@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Identifier="E5F388F9-2097-4DE4-A946-7F50576642C1" Version="2.0" Creator="SCRMAC-3.2.3-14869" Device="Blakes-MacBook-Pro" Author="" Modified="2022-02-28 00:43:02 -0500" ModID="2747D328-CC6A-4427-B1D3-013F97B418DC">
+<ScrivenerProject Identifier="E5F388F9-2097-4DE4-A946-7F50576642C1" Version="2.0" Creator="SCRMAC-3.2.3-14869" Device="Blakes-MacBook-Pro" Author="" Modified="2022-02-28 02:26:39 -0500" ModID="06039FB9-ADE1-41F9-B655-CA22561C595F">
     <Binder>
         <BinderItem UUID="4A1D6B18-0952-42EB-A487-D17915DD3BA1" Type="DraftFolder" Created="2022-02-24 23:22:27 -0500" Modified="2022-02-24 23:22:27 -0500">
             <Title>Manuscript</Title>
             <Children>
-                <BinderItem UUID="4A61588C-66DD-4BD1-9BB4-6F2CEB4E58E4" Type="Text" Created="2022-02-24 23:22:27 -0500" Modified="2022-02-28 00:42:42 -0500">
+                <BinderItem UUID="4A61588C-66DD-4BD1-9BB4-6F2CEB4E58E4" Type="Text" Created="2022-02-24 23:22:27 -0500" Modified="2022-02-28 02:26:39 -0500">
                     <Title>Scene 1</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>61948,0</TextSelection>
+                        <TextSelection>31392,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
             </Children>
@@ -207,11 +207,11 @@
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="Yes" Deadline="2011-04-12 08:24:39 -0400" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="No" NextResetDate="2022-03-01 00:00:00 -0500" ResetType="Time" ResetTime="00:00" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="7956" Characters="41854" Date="2022-02-28 00:07:53 -0500"/>
+        <PreviousSession Words="7978" Characters="41955" Date="2022-02-28 01:49:19 -0500"/>
     </ProjectTargets>
     <RecentWritingHistory Date="2022-02-28 00:00:00 -0500">
-        <DraftWordCount>7890</DraftWordCount>
-        <DraftCharCount>41514</DraftCharCount>
+        <DraftWordCount>7912</DraftWordCount>
+        <DraftCharCount>41615</DraftCharCount>
         <OtherWordCount>0</OtherWordCount>
         <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
