@@ -59,6 +59,11 @@
 			<key>Row</key>
 			<integer>-1</integer>
 		</dict>
+		<key>57ECC98D-8199-4935-B5F1-D1F7A2D60646</key>
+		<dict>
+			<key>Row</key>
+			<integer>-1</integer>
+		</dict>
 		<key>5C03DE09-C285-48ED-827F-78E62B7D0F72</key>
 		<dict>
 			<key>Row</key>
@@ -239,7 +244,7 @@
 		<key>widths</key>
 		<dict>
 			<key>TITLE</key>
-			<real>228</real>
+			<real>200</real>
 		</dict>
 	</dict>
 	<key>showInvisibles</key>
