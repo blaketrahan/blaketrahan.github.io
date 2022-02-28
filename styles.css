@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -42,12 +44,14 @@ h4 {
     margin: calc(1ex / 0.37) 0;
 }
 p {
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: calc(1ex / 0.32);
-    margin: calc(1ex / 0.32) 0;
-    text-indent: 30px;
+    margin: 0;
+    text-indent: 18px;
     width: 60ch;
     max-width: 100%;
+    color: #111;
+    font-family: 'PT Serif', serif;
 }
 /* The browser correctly supports hyphenation */
 p[lang="en"] {
