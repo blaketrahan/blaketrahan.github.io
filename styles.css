@@ -60,17 +60,11 @@ p[lang="en"] {
     text-align: justify;
     hyphens: auto;
 }
-/* Apply a default color scheme */
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-}
-html {
-  background-color: #eee8d5;
-  color: #657b83;
-}
-body {
   background-color: #fdf6e3;
+  color: #657b83;
 }
 a {
   color: #b58900;
