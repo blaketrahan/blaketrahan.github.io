@@ -89,6 +89,11 @@
 			<key>Row</key>
 			<integer>-1</integer>
 		</dict>
+		<key>8250B6E3-70FB-47BF-B0AB-FBD756010A44</key>
+		<dict>
+			<key>Row</key>
+			<integer>-1</integer>
+		</dict>
 		<key>89BEF266-C823-409F-8D72-FA72F7238089</key>
 		<dict>
 			<key>Row</key>
@@ -173,8 +178,8 @@
 	<integer>0</integer>
 	<key>inspectorSplitFrames</key>
 	<array>
-		<string>{{0, 0}, {876, 684}}</string>
-		<string>{{877, 0}, {227, 684}}</string>
+		<string>{{0, 0}, {828.5, 684}}</string>
+		<string>{{829.5, 0}, {274.5, 684}}</string>
 	</array>
 	<key>inspectorWidth</key>
 	<real>201</real>
@@ -225,7 +230,7 @@
 	<key>mainDocumentEditor.rulerIsVisible</key>
 	<false/>
 	<key>mainDocumentEditor.scrollRect</key>
-	<string>{{0, 0}, {620, 628}}</string>
+	<string>{{0, 1350.5}, {620, 628}}</string>
 	<key>mainDocumentEditor.selectedRanges</key>
 	<string>{0, 0}</string>
 	<key>mainDocumentEditor.textEditorState</key>

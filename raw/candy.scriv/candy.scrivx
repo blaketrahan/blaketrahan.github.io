@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Identifier="14CA106D-BFDA-4595-ADB7-7F19BDA38045" Version="2.0" Creator="SCRMAC-3.2.3-14869" Device="Blakes-MacBook-Pro" Author="" Modified="2022-03-12 19:41:55 -0500" ModID="203BEB1E-F90F-4B7F-8926-E2EA8CBE68DA">
+<ScrivenerProject Identifier="14CA106D-BFDA-4595-ADB7-7F19BDA38045" Version="2.0" Creator="SCRMAC-3.2.3-14869" Device="Blakes-MacBook-Pro" Author="" Modified="2022-03-14 00:28:37 -0400" ModID="0597DA30-C940-4240-816F-B55D1EAB290F">
     <Binder>
         <BinderItem UUID="F8F9FDEF-FD9F-4A8C-B33D-3434A1220ADC" Type="Text" Created="2022-03-05 17:51:32 -0500" Modified="2022-03-05 20:57:28 -0500">
             <Title>Short Story Format</Title>
@@ -14,13 +14,13 @@
         <BinderItem UUID="4A1D6B18-0952-42EB-A487-D17915DD3BA1" Type="DraftFolder" Created="2022-03-05 17:51:32 -0500" Modified="2022-03-05 17:51:32 -0500">
             <Title>Manuscript</Title>
             <Children>
-                <BinderItem UUID="FA46BDA6-BD1A-4C94-B6F9-B7588053552E" Type="Text" Created="2022-03-05 17:55:13 -0500" Modified="2022-03-12 19:41:55 -0500">
+                <BinderItem UUID="FA46BDA6-BD1A-4C94-B6F9-B7588053552E" Type="Text" Created="2022-03-05 17:55:13 -0500" Modified="2022-03-13 21:55:34 -0400">
                     <Title>Fairytale</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>102,0</TextSelection>
+                        <TextSelection>3083,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
                 <BinderItem UUID="37C35628-A0D8-499C-98F8-AFD2B6654FA5" Type="Text" Created="2022-03-12 18:42:54 -0500" Modified="2022-03-12 19:04:51 -0500">
@@ -32,22 +32,31 @@
                         <TextSelection>1597,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem UUID="FF73D421-4B26-4EE5-9433-332F13D793D4" Type="Text" Created="2022-03-12 18:44:20 -0500" Modified="2022-03-12 19:20:01 -0500">
+                <BinderItem UUID="FF73D421-4B26-4EE5-9433-332F13D793D4" Type="Text" Created="2022-03-12 18:44:20 -0500" Modified="2022-03-14 00:28:37 -0400">
                     <Title>Fall</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>6250,0</TextSelection>
+                        <TextSelection>4250,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem UUID="D0323854-E1A2-4B8F-B8CC-1B494A75E952" Type="Text" Created="2022-03-12 18:44:27 -0500" Modified="2022-03-12 19:02:11 -0500">
+                <BinderItem UUID="8250B6E3-70FB-47BF-B0AB-FBD756010A44" Type="Text" Created="2022-03-13 23:30:07 -0400" Modified="2022-03-14 00:26:56 -0400">
+                    <Title>Dancing</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>4305,0</TextSelection>
+                    </TextSettings>
+                </BinderItem>
+                <BinderItem UUID="D0323854-E1A2-4B8F-B8CC-1B494A75E952" Type="Text" Created="2022-03-12 18:44:27 -0500" Modified="2022-03-13 23:32:37 -0400">
                     <Title>Hospital</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>4186,0</TextSelection>
+                        <TextSelection>2479,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
                 <BinderItem UUID="4A84F90B-A87F-48F0-814B-250E971ED399" Type="Text" Created="2022-03-12 18:44:32 -0500" Modified="2022-03-12 19:32:31 -0500">
@@ -56,7 +65,7 @@
                         <IncludeInCompile>Yes</IncludeInCompile>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>1027,0</TextSelection>
+                        <TextSelection>398,0</TextSelection>
                     </TextSettings>
                 </BinderItem>
             </Children>
@@ -277,14 +286,14 @@
     </ProjectBookmarks>
     <ProjectTargets Notify="No">
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="Yes" Deadline="2011-04-12 08:24:39 -0400" IgnoreDeadline="Yes">0</DraftTarget>
-        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="No" NextResetDate="2022-03-13 00:00:00 -0500" ResetType="Time" ResetTime="00:00" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
-        <PreviousSession Words="5296" Characters="27818" Date="2022-03-12 14:27:40 -0500"/>
+        <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="No" NextResetDate="2022-03-14 01:00:00 -0400" ResetType="Time" ResetTime="00:00" DeterminedFromDeadline="No" WritingDays="" CanWriteOnDeadlineDate="No">0</SessionTarget>
+        <PreviousSession Words="1999" Characters="10407" Date="2022-03-13 21:55:16 -0400"/>
     </ProjectTargets>
-    <RecentWritingHistory Date="2022-03-12 00:00:00 -0500">
-        <DraftWordCount>3177</DraftWordCount>
-        <DraftCharCount>16703</DraftCharCount>
-        <OtherWordCount>1586</OtherWordCount>
-        <OtherCharCount>8322</OtherCharCount>
+    <RecentWritingHistory Date="2022-03-14 00:00:00 -0400">
+        <DraftWordCount>35</DraftWordCount>
+        <DraftCharCount>196</DraftCharCount>
+        <OtherWordCount>0</OtherWordCount>
+        <OtherCharCount>0</OtherCharCount>
     </RecentWritingHistory>
     <TemplateFolderUUID>5C03DE09-C285-48ED-827F-78E62B7D0F72</TemplateFolderUUID>
     <BookmarksFolderUUID>69822417-D015-4BDD-90BD-18AAA6198D15</BookmarksFolderUUID>
