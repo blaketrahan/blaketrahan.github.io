@@ -17,6 +17,10 @@
       border: 1px solid blue;
       display: inline-block;
     }
+    pre {
+      max-width: 100%;
+      overflow: scroll;
+    }
   </style>
   <form id='metsearch' style="display:inline-block;">
   	<label>met object id search</label>
@@ -81,7 +85,7 @@
             addImg.appendChild(i);
           }
         }
-        msg.innerHTML = JSON.stringify(resp);
+        msg.innerHTML = '<pre>' + JSON.stringify(resp, null, 2) + '</pre>';
   		})
   		.catch(e => { 
         msg.innerHTML = JSON.stringify(e);
