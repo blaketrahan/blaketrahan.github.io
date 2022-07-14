@@ -21,13 +21,24 @@
       max-width: 100%;
       overflow: scroll;
     }
+    #buttons button {
+      margin: 5px;
+    }
   </style>
   <form id='metsearch' style="display:inline-block;">
   	<label>met object id search</label>
-  	<input type='text' name='objectid' required>
+  	<input type='number' name='objectid' required min=1>
   	<input type='submit' name='submit'>
   </form>
-  <button id="random" style="display:inline-block;">Random (with image)</button>
+  <button id="random" style="display:inline-block;">Random with Image</button>
+  <hr>
+  <form id='metquery' style="display:inline-block;">
+    <label>met artist name or culture search</label>
+    <input type='text' name='querytext' required>
+    <input type='submit' name='submit'>
+  </form>
+  <div>search results</div>
+  <div id="queryresults"></div>
     <hr>
     <div>Primary Image</div>
   <a id='primaryImage' href="" target="_blank" style='display: none;'>
@@ -41,6 +52,7 @@
   <div>Data</div>
   <div id='message'></div>
   <script>
+
     const primaryImg = document.getElementById('primaryImage');
     const smallImg = document.getElementById('primaryImageSmall');
     const msg = document.getElementById('message');
@@ -48,6 +60,31 @@
     const form = document.getElementById('metsearch');
     const randomBtn = document.getElementById('random');
     let isRandom = false;
+
+    function getQuery(query) {
+      const url = `https://collectionapi.metmuseum.org/public/collection/v1/search`;
+      const params = `?hasImages=true&artistOrCulture=true&q=${query}`;
+      return fetch(url + params).then(resp => resp.json());
+    }
+
+    document.getElementById('metquery').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const results = await getQuery(this.querytext.value);
+      const show = document.getElementById('queryresults');
+      show.innerHTML = '';
+      if (!!results.objectIDs) {
+        for (r of results.objectIDs) {
+          const btn = document.createElement('button');
+          btn.innerText = r;
+          btn.setAttribute('data-value', r);
+          btn.addEventListener('click', function (e) {
+            form.objectid.value = btn.getAttribute('data-value');
+            form.submit.click();
+          });
+          show.appendChild(btn);
+        }
+      }
+    });
 
   	form.addEventListener('submit', function (e) {
   		e.preventDefault();
@@ -106,7 +143,7 @@
           objects = resp;
         });
       }
-      const r = Math.floor(Math.random()*objects.objectIDs.length);
+      const r = Math.floor(Math.random()*objects.total);
       form.objectid.value = objects.objectIDs[r];
       isRandom = true;
       form.submit.disabled = false;
