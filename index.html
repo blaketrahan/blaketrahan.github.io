@@ -1,16 +1,418 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="blog">
-  <meta name="author" content="blake trahan">
-  <meta name="keywords" content="blake trahan, artist, blog, writing">
-  <title>blake trahan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>library</title>
+  <style>
+  	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+	  margin: 0;
+	  padding: 0;
+	  border: 0;
+	  font-size: 100%;
+	  font: inherit;
+	  vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+	  display: block;
+	}
+	body {
+	  line-height: 1;
+	  width: 100%;
+	  margin: auto;
+	  max-width: 100%;
+	}
+	ol, ul {
+	  list-style: none;
+	}
+	blockquote, q {
+	  quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+	  content: '';
+	  content: none;
+	}
+	table {
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	}
+	html {
+	    font-size: 10px;
+	    background: rgb(4,32,41);
+	    color: #eed;
+	    font-family: Corbel, sans-serif;
+	}
+	.books {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: flex-start;
+	  flex-wrap: wrap;
+	}
+	.books > div {
+	  min-width: 0;
+	  flex-basis: 25%;
+	}
+	.goals, .diet,
+	.work, .todo, .feynman {
+	  display: inline-block;
+	  vertical-align: top;
+	  padding: 10px;
+	  margin-bottom: 2rem;
+	  float: left;
+
+	}
+	.books {
+	  clear: both;
+	}
+	.todo {
+	border: 20px outset #62693e;
+	    padding: 1px 20px 10px 20px;
+	    background: #575d3b;
+	    color: white;
+	    font-size: 16px;
+	}
+	* {
+	  box-sizing: border-box;
+	}
+	ul {
+	  max-width: 25%;
+	}
+	img {
+	  max-width: 100%;
+	}
+	h1 {
+	  font-size: 1.5rem;
+	  color: #f77777;
+	  margin-bottom: 0.5rem;
+	}
+	li {
+	  font-size: 1.2rem;
+	  line-height: 1.5rem;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  cursor: pointer;
+	}
+	li:hover {
+	  white-space: initial;
+	  overflow: initial;
+	  text-overflow: initial;
+	}
+	li.other {
+	  color: #807599;
+	}
+	li:hover,
+	li.other:hover {
+	  color: pink;
+	}
+	a {
+	  text-decoration: none;
+	  color: lightblue;
+	}
+	li + h1 {
+	  margin-top: 0.5rem;
+	}
+	.goals {
+	  font-size: 1.5rem;
+	  line-height: 1.75rem;
+	      border: 12px outset #344d54;
+	    background: #283e44;
+	}
+	.work {
+	  color: aquamarine;
+	  border: 12px outset #4c0b3a;
+	    background: #3c0c2f;
+	    padding: 6px;
+	}
+	.diet {
+	  color: magenta;
+	}
+	.work, .diet {
+	  font-size: 1.5rem;
+	  line-height: 2rem;
+	}
+	pre {
+	  background: #f4f0e9;
+	  color: #333;
+	  padding: 1rem;
+	  font-size: 1.5rem;
+	  line-height: 2.8rem;
+	  font-family: sans-serif;
+	  overflow-x: auto;
+	  white-space: pre-wrap;
+	  white-space: -moz-pre-wrap;
+	  white-space: -pre-wrap;
+	  white-space: -o-pre-wrap;
+	  word-wrap: break-word;
+	}
+	.feynman {
+	      border: 12px outset #0e141b;
+	    background: #15202b;
+	    padding-bottom: 10px;
+	}
+	@media (max-width: 800px) {
+	  html {
+	    padding: 15px;
+	  }
+	  .goals, .diet, .work, .todo, .feynman {
+	    width: 100%;
+	  }
+	  .books {
+	    display: block;
+	  }
+	  ul {
+	    max-width: 100%;
+	  }
+	}
+  </style>
 </head>
 <body>
-  <p style='font-family: sans-serif;'>おはよー　浪人</p>
-  <br>
-  <img src="./ronin.jpeg" style="width: 100%; max-width: 400px;">
+<section class="daily">
+  <div class="feynman">
+    <img src="./feynman.png">
+  </div>
+</section>
+  <section class="books">
+    <div>
+      <h1>the antilibrary:</h1>
+      <li>Contre-Jour: A triptych after Pierre Bonnard, Gabriel Josipovici</li>
+      <li>brian keating</li>
+      <li>zero, charles seife</li>
+      <li>sapiens, yuval</li>
+      <li>(Psychology) Naming the Mind: How Psychology Found Its Language (244 p.)</li>
+      <li>(Psychology) Triple Helix: Gene, Organism, and Environment (144 p.)</li>
+      <li><a href="./heying.txt">heather heying's list</a></li>
+      <li>go down, moses, william faulkner</li>
+      <li>chimera, john barth</li>
+      <li>why we sleep, matthew walker</li>
+      <li>jocko willink</li>
+      <li>exodus</li>
+      <li>russian, eg dostoevsky, tolstoy</li>
+      <li>gad saad</li>
+      <li>james baldwin, giovannis room?</li>
+      <li>eric's important books</li>
+      <li>endless frontier vannevar bush</li>
+      <li>content of our character, shelby steele</li>
+      <li>Self-Portrait in Black and White, thomas chatterton williams</li>
+      <li>the omni-americans, albert murray</li>
+      <li>Childhood's End, arthur c. clarke</li>
+      <li>solaris, Stanisław Lem (audio)</li>
+      <li>shakespeare, othello, etc, arkangel audio, orson welles, http://shakespeare.mit.edu/index.html</li>
+      <li>debra soh, end of gender</li>
+      <li>ovid, tiresias</li>
+      <li>Amusing Ourselves to Death, neil postman</li>
+      <li>george orwell, aldous huxley</li>
+      <li>steven pinker</li>
+      <li>walden</li>
+      <li>fencing, aldo nadi</li>
+      <li>finish the kalevala</li>
+      <li>cynical theories (audiobook?)</li>
+      <li>shattered sword: midway</li>
+      <li>ancient war history</li>
+      <li>haidt, righteousness</li>
+      <li>fountainhead</li>
+      <li>atlas shrugged</li>
+      <li>objectivism, yaron brook, leonard peikoff</li>
+      <li>equal is unequal, yaron brook</li>
+      <li><a href="https://www.amazon.com/dp/0465064957/ref=cm_sw_r_cp_api_i_hUUsFbZFFQM6R" target="_blank">Math: love and math</a></li>
+      <li>short stories in japanese</li>
+      <li>scifi: foundation, hyperion, dune</li>
+      <li>zero to one</li>
+      <li>selfish gene</li>
+      <li>snowden's book</li>
+      <li>jordan peterson</li>
+      <li>Alexis de Tocqueville</li>
+      <li>italo calvino</li>
+      <li>Fresh Complaint: Stories, eugenides</li>
+      <li>paradise lost</li>
+      <li>books on chess</li>
+      <li>feynman lectures</li>
+      <li>the road to reality, roger penrose</li>
+      <li>books on art history</li>
+      <li>james nestor, breathing</li>
+      <li>books on war, difficult situations (re: the plague)</li>
+      <li>Lifespan: Why We Age – and Why We Don't Have To, sinclair</li>
+      <li>books, documentaries, videos on traditional painting techniques</li>
+      <li>Primacy of Perception, merleau-ponty</li>
+      <li>morning star, knausgaard</li>
+      <li>The Rings of Saturn, sebald</li>
+      <li>joan didion</li>
+      <li>the art spirit, robert henri</li>
+      <li>diary, witold gombrowics</li>
+      <li>dialogue, galileo (audiobook, keating)</li>
+      <li>tools of conviviality, ivan illich</li>
+      <li>deschooling society, ivan illich</li>
+      <li>the question concerning technology, martin heidegger</li>
+      <li>man and technics, oswald spengler</li>
+      <li>da vinci treatise</li>
+      <li>letters, vincent van gogh</li>
+    </div>
+    <div>
+      <!-- ================================================== -->
+      <!-- ================================================== -->
+      <h1>up next</h1>
+      <li>twilight of painting, gammell</li>
+        <li>Velasquez, R. A. M. Stevenson,</li>
+        <li>The Training of the Memory in Art and the Education of the Artist, Horace Lecoq de Boisbaudran</li>
+        <li>Eugene Fromentin, Painter and Writer, Gonse, Louis</li>
+        <li>Frank Duveneck, Heermann, Norbert</li>
+        <li>Oil Painting Techniques and Materials, Harold Speed</li>
+        <li>The Practice and Science of Drawing, Harold Speed</li>
+        <li>Old Masters and New: Essays in Art Criticism, Kenyan Cox</li>
+        <li>Conversations on Art Methods, Thomas Couture</li>
+      <!-- ================================================== -->
+      <!-- ================================================== -->
+      <h1>reading</h1>
+      <li>the boston painters, gammell</li>
+       <li>Life in the Studio, Nancy Hale</li>
+       <li>The Classic Point of View, Six Lectures on Painting, Kenyon Cox</li>
+        <li>the painting of modern life, t.j. clark </li>
+        <li>A Hunter-Gatherer's Guide to the 21st Century, heying & weinstein</li>
+        <li>Art in Theory 1900-2000, Charles Harrison, Paul Wood</li>
+        <li>My Struggle, Book 6, Karl Ove Knausgaard</li>
+      <!-- ================================================== -->
+      <!-- ================================================== -->
+      <h1>2022</h1>
+        <li>shop talk of degas, r.h. ives gammell</li>
+        <li>the old man and the sea, ernest hemingway</li>
+        <li>the dharma bums, jack kerouac</li>
+        <li>the sun also rises, ernest hemingway</li>
+        <li>howl and other poems, allen ginsberg</li>
+        <li>letters to a young poet, rainer maria rilke<b>☆</b></li>
+        <li>a moveable feast, ernest hemingway<b>☆</b></li>
+        <li>the little book of cosmology, lyman page</li>
+      <!-- ================================================== -->
+      <!-- ================================================== -->
+      <h1>2021</h1>
+      <li>beowulf, tr. burton raffel</li>
+      <li>the plague, albert camus</li>
+      <li>leave society, tao lin</li>
+      <li>hiroshima notes, kenzaburo oe</li>
+      <li>Emperor's New Mind, Roger Penrose</li>
+      <li>territory of light, yuko tsushima</li>
+      <li>My Struggle, Book 5, Karl Ove Knausgaard</li>
+      <li>the elephant vanishes, haruki murakami</li>
+      <li>book of laughter and forgetting, milan kundera</li>
+      <li>The Mathematician's Lament, Paul Lockhart</li>
+      <li>7 1/2 lessons about the brain, lisa feldman barrett</li>
+      <li>permutation city, greg egan</li>
+      <li><a href="https://www.nickbostrom.com/fable/dragon.html" target="_blank">The Fable of the Dragon-Tyrant, Nick Bostrom</a></li>
+      <li><a href="https://frc.ri.cmu.edu/~hpm/project.archive/general.articles/1998/SimConEx.98.html" target="_blank">
+        Simulation, Consciousness, Existence, Hans Moravec
+       </a></li>
+      <li><a href="#">Ur-Fascism, Umberto Eco</a></li>
+      </div>
+      <div>
+      <h1>2020</h1>
+      <li>norwegian wood (reread)</li>
+      <li>ikigai, ken mogi</li>
+      <li>madness of crowds, douglas murray<b>☆</b></li>
+      <li>Mutual Aid, Peter Kropotkin<b>☆</b></li>
+      <li>blindness, saramago<b>☆</b></li>
+      <li>Lying, Sam Harris</li>
+      <li>Free Will, Sam Harris</li>
+      <li>my struggle, book 4, karl ove knausgaard</li>
+      <li>the true believer, eric hoffer</li>
+      <li>seize the day, saul bellow</li>
+      <li>the sense of an ending, julian barnes</li>
+      <li>ms ice sandwich, mieko kawakami</li>
+      <li>a well-kept life, hoshi shinichi</li>
+      <li>dubliners, james joyce</li>
+      <li>hardboiled & hard luck, banana yoshimoto</li>
+      <li>my struggle, book 3, karl ove knausgaard</li>
+      <li class="other">The Nightmare That Is a Reality, Arthur Koestler</li>
+      <li class="other">The Unreasonable Effectiveness of Mathematics in the Natural Sciences, Eugene Wigner</li>
+      <li class="other">Existentialism is a Humanism, Jean-Paul Sartre</li>
+      <li class="other">Ecclesiastes</li>
+      <h1>2019</h1>
+      <li>brief encounters, dick cavett</li>
+      <li>terra incognita, spring in fialta and the doorbell, vladimir nabokov</li>
+      <li>the emissary, yoko tawada</li>
+      <li>convenience store woman, sayaka murata</li>
+      <li>My Struggle Book 2, karl ove knausgaard</li>
+      <li>what is the what, david eggers</li>
+      <li>moshi moshi, shimokitazawa, banana yoshimoto</li>
+      <li>my struggle, book 1, karl ove knausgaard<b>☆</b></li>
+      <li>what purpose did i serve in your life, marie calloway<b>☆</b></li>
+      <li>pinball, 1973, haruki murakami</li>
+      <li>hear the wind sing, haruki murakami</li>
+      <li>kitchen, banana yoshimoto<b>☆</b></li>
+      <li>middlesex, jeffrey eugenides<b>☆</b></li>
+    </div>
+    <div>
+      <h1>2018</h1>
+      <li>the book of tokyo, various, translated</li>
+      <li>shoplifting from american apparel, tao lin</li>
+      <li>the grapes of wrath, john steinbeck</li>
+      <li>hard-boiled wonderland and the end of the world, haruki murakami, tr. alfred birnbaum</li>
+      <li>the optimist's daughter, eudora welty</li>
+      <li>foundation, isaac asimov</li>
+      <li>everything is illuminated, jonathan safran foer</li>
+      <li>a brief history of time, stephen hawking<b>☆</b></li>
+      <li>the known world, edward p. jones<b>☆</b></li>
+      <li>the metamorphosis, franz kafka</li>
+      <li>the stranger, albert camus</li>
+      <li>the human stain, philip roth</li>
+      <li>richard yates, tao lin</li>
+      <h1>2017</h1>
+      <li>blood meridian, cormac mcarthy</li>
+      <li>bed, tao lin</li>
+      <li>breakfast at tiffany's, truman capote</li>
+      <li>housekeeping, marilynne robinson</li>
+      <li>the woman warrior, maxine hong kingston</li>
+      <li>the bluest eye, toni morrison</li>
+      <li>the beauty of history, viivi luik</li>
+      <li>swing time, zadie smith<b>☆</b></li>
+      <li>lost in the funhouse, john barth<b>☆</b></li>
+      <li>after art, david joselit</li>
+      <li>franny and  zooey, j.d. salinger</li>
+      <li>on the road, jack kerouac</li>
+      <li>lolita, vladimir nabokov</li>
+      <li>wise blood, flannery o’connor</li>
+      <li>black boy, richard wright<b>☆</b></li>
+    </div>
+    <div>
+      <h1>uncategorized</h1>
+        <li>the crying of lot 49, thomas pynchon</li>
+        <li>the virgin suicides, jeffrey eugenides</li>
+        <li>norwegian wood, haruki murakami</li>
+        <li>the marriage plot, jeffrey eugenides<b>☆</b></li>
+      <h1>on the shelf</h1>
+      <li>leaves of grass, walt whitman</li>
+        <li>on the origin of species, darwin</li>
+        <li>gravity's rainbow, thomas pynchon</li>
+        <li>anna karenina (finished part 2)</li>
+        <li>the fourth turning, strauss & howe</li>
+        <li>ボッコちゃん, 星新一</li>
+        <li>a lover's discourse: fragments, roland barthes (15%)</li>
+        <li>the kalevala, elias lönnrot tr. keith bosley</li>
+        <li>on photography, susan sontag</li>
+        <li>little fires everywhere, celeste ng</li>
+        <li>crime and punishment, fyodor dostoyevsky, tr. oliver ready</li>
+        <li>the art of computer programming vol 1, donald knuth</li>
+        <li>the awakening, kate chopin</li>
+        <li>swann's way, marcel proust</li>
+        <li>the overstory, richard powers</li>
+        <li><strong>神様、川上弘美</strong></li>
+        <li><a href="https://www.math.ualberta.ca/mss/misc/A%20Mathematician%27s%20Apology.pdf" target="_blank">
+          Math: mathematician's apology, hardy
+         </a></li>
+    </div>
+  </section>
 </body>
 </html>
