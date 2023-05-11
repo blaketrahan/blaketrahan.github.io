@@ -172,7 +172,6 @@
   .important-link {
     font-size: 18px;
     padding: 10px;
-    display: inline-block;
     text-decoration: underline;
   }
 	@media (max-width: 800px) {
@@ -189,14 +188,27 @@
 	    max-width: 100%;
 	  }
 	}
+  .main {
+    display: flex;
+  }
+  @media (max-width: 800px) {
+    .main {
+      display: block;
+    }
+  }
   </style>
 </head>
 <body>
-<section class="daily">
-  <h1 class="holiday">October 15: Are Dreams in Japan</h1>
-  <a class="important-link" href="./paintings.html">Important Paintings</a><a href="#">2017 - backpack, weightless, open world</a>
+<section class="main">
   <div class="feynman">
     <img src="./feynman.png">
+  </div>
+  <div>
+    <a class="important-link" href="./paintings.html">Important Paintings</a>
+  </div>
+  <div style="justify-self: flex-end;flex-grow: 1;text-align: right;">
+    <p>October 15: Are Dreams in Japan<br><br>
+    2017 was backpack, weightless, open world</p>
   </div>
 </section>
   <section class="books">
