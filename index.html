@@ -5,189 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>library</title>
   <style>
-  	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed,
-	figure, figcaption, footer, header, hgroup,
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video {
-	  margin: 0;
-	  padding: 0;
-	  border: 0;
-	  font-size: 100%;
-	  font: inherit;
-	  vertical-align: baseline;
-	}
-	/* HTML5 display-role reset for older browsers */
-	article, aside, details, figcaption, figure,
-	footer, header, hgroup, menu, nav, section {
-	  display: block;
-	}
-	body {
-	  line-height: 1;
-	  width: 100%;
-	  margin: auto;
-	  max-width: 1500px;
-	}
-	ol, ul {
-	  list-style: none;
-	}
-	blockquote, q {
-	  quotes: none;
-	}
-	blockquote:before, blockquote:after,
-	q:before, q:after {
-	  content: '';
-	  content: none;
-	}
-	table {
-	  border-collapse: collapse;
-	  border-spacing: 0;
-	}
-	html {
-	    font-size: 10px;
-	    background: rgb(4,32,41);
-	    color: #eed;
-	    font-family: Corbel, sans-serif;
-	}
-	.books {
-	  display: flex;
-	  flex-direction: row;
-	  justify-content: flex-start;
-	  flex-wrap: wrap;
-	}
-	.books > div {
-	  min-width: 0;
-	  flex-basis: 25%;
-	}
-	.goals, .diet,
-	.work, .todo, .feynman {
-	  display: inline-block;
-	  vertical-align: top;
-	  padding: 10px;
-	  margin-bottom: 2rem;
-	  float: left;
+    html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+    width: 100%;
+    margin: auto;
+    max-width: 1500px;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  html {
+      font-size: 10px;
+      background: rgb(4,32,41);
+      color: #eed;
+      font-family: Corbel, sans-serif;
+  }
+  .books {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .books > div {
+    min-width: 0;
+    flex-basis: 25%;
+  }
+  .goals, .diet,
+  .work, .todo, .feynman {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    margin-bottom: 2rem;
+    float: left;
 
-	}
-	.books {
-	  clear: both;
-	}
-	.todo {
-	border: 20px outset #62693e;
-	    padding: 1px 20px 10px 20px;
-	    background: #575d3b;
-	    color: white;
-	    font-size: 16px;
-	}
-	* {
-	  box-sizing: border-box;
-	}
-	ul {
-	  max-width: 25%;
-	}
-	img {
-	  max-width: 100%;
-	}
-	h1 {
-	  font-size: 1.5rem;
-	  color: #f77777;
-	  margin-bottom: 0.5rem;
-	}
-	li {
-	  font-size: 1.2rem;
-	  line-height: 1.5rem;
-	  white-space: nowrap;
-	  overflow: hidden;
-	  text-overflow: ellipsis;
-	  cursor: pointer;
-	}
-	li:hover {
-	  white-space: initial;
-	  overflow: initial;
-	  text-overflow: initial;
-	}
-	li.other {
-	  color: #807599;
-	}
-	li:hover,
-	li.other:hover {
-	  color: pink;
-	}
-	a {
-	  text-decoration: none;
-	  color: lightblue;
-	}
-	li + h1 {
-	  margin-top: 0.5rem;
-	}
-	.goals {
-	  font-size: 1.5rem;
-	  line-height: 1.75rem;
-	      border: 12px outset #344d54;
-	    background: #283e44;
-	}
-	.work {
-	  color: aquamarine;
-	  border: 12px outset #4c0b3a;
-	    background: #3c0c2f;
-	    padding: 6px;
-	}
-	.diet {
-	  color: magenta;
-	}
-	.work, .diet {
-	  font-size: 1.5rem;
-	  line-height: 2rem;
-	}
-	pre {
-	  background: #f4f0e9;
-	  color: #333;
-	  padding: 1rem;
-	  font-size: 1.5rem;
-	  line-height: 2.8rem;
-	  font-family: sans-serif;
-	  overflow-x: auto;
-	  white-space: pre-wrap;
-	  white-space: -moz-pre-wrap;
-	  white-space: -pre-wrap;
-	  white-space: -o-pre-wrap;
-	  word-wrap: break-word;
-	}
-	.feynman {
+  }
+  .books {
+    clear: both;
+  }
+  .todo {
+  border: 20px outset #62693e;
+      padding: 1px 20px 10px 20px;
+      background: #575d3b;
+      color: white;
+      font-size: 16px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  ul {
+    max-width: 25%;
+  }
+  img {
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 1.5rem;
+    color: #f77777;
+    margin-bottom: 0.5rem;
+  }
+  li {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+  li:hover {
+    white-space: initial;
+    overflow: initial;
+    text-overflow: initial;
+  }
+  li.other {
+    color: #807599;
+  }
+  li:hover,
+  li.other:hover {
+    color: pink;
+  }
+  a {
+    text-decoration: none;
+    color: lightblue;
+  }
+  li + h1 {
+    margin-top: 0.5rem;
+  }
+  .goals {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+        border: 12px outset #344d54;
+      background: #283e44;
+  }
+  .work {
+    color: aquamarine;
+    border: 12px outset #4c0b3a;
+      background: #3c0c2f;
+      padding: 6px;
+  }
+  .diet {
+    color: magenta;
+  }
+  .work, .diet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  pre {
+    background: #f4f0e9;
+    color: #333;
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    font-family: sans-serif;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+  .feynman {
       border: 12px outset #0e141b;
-	    background: #15202b;
-	    padding-bottom: 10px;
-	}
-	.holiday {
-		padding: 5px;
-		float: right;
-	}
+      background: #15202b;
+      padding-bottom: 10px;
+  }
+  .holiday {
+    padding: 5px;
+    float: right;
+  }
   .important-link {
     font-size: 18px;
     padding: 10px;
     text-decoration: underline;
   }
-	@media (max-width: 800px) {
-	  html {
-	    padding: 15px;
-	  }
-	  .goals, .diet, .work, .todo, .feynman {
-	    width: 100%;
-	  }
-	  .books {
-	    display: block;
-	  }
-	  ul {
-	    max-width: 100%;
-	  }
-	}
+  @media (max-width: 800px) {
+    html {
+      padding: 15px;
+    }
+    .goals, .diet, .work, .todo, .feynman {
+      width: 100%;
+    }
+    .books {
+      display: block;
+    }
+    ul {
+      max-width: 100%;
+    }
+  }
   .main {
     display: flex;
   }
@@ -264,25 +264,26 @@
       <!-- ================================================== -->
       <!-- ================================================== -->
       <h1>up next</h1>
-      <h1>reading</h1>
+        <li>meditations, marcus aurelius</li>
+        <li>da vinci's notebooks</li>
         <li>lecture: Ten O'Clock, Whistler</li>
+      <h1>reading</h1>
         <li>lecture: discourses on art, reynolds</li>
-	<li>meditations, marcus aurelius</li>
-	<li>da vinci's notebooks</li>
         <li>war and peace, tolstoy</li>
-        <li>lecture: on colour, opie</li>
         <li>the bible</li>
-	<li>essay: gammell's notes</li>
+        <li>essay: gammell's notes</li>
       <h1>2023</h1>
+        <li>letter to artists, pope john paul II</li>
+        <li>lecture: on colouring, opie</li>
         <li>training of the memory in art, lecoq</li>
-	<li>essay: art and revolution, ingbretson</li>
+        <li>essay: art and revolution, ingbretson</li>
         <li>dennis miller bunker, gammell</li>
         <li>twilight of painting, gammell</li>
         <li>the boston painters, gammell</li>
       <!-- ================================================== -->
       <!-- ================================================== -->
       <h1>2022</h1>
-	<li>Velasquez, R. A. M. Stevenson</li>
+        <li>Velasquez, R. A. M. Stevenson</li>
         <li>The Classic Point of View, Six Lectures on Painting, Kenyon Cox</li>
         <li>Life in the Studio, Nancy Hale</li>
         <li>the painting of modern life, t.j. clark </li>
@@ -297,101 +298,101 @@
       <!-- ================================================== -->
       <!-- ================================================== -->
       <h1>2021</h1>
-      <li>beowulf, tr. burton raffel (reread)<b>☆</b></li>
-      <li>the plague, albert camus</li>
-      <li>leave society, tao lin</li>
-      <li>hiroshima notes, kenzaburo oe</li>
-      <li>Emperor's New Mind, Roger Penrose</li>
-      <li>territory of light, yuko tsushima</li>
-      <li>My Struggle, Book 5, Karl Ove Knausgaard</li>
-      <li>the elephant vanishes, haruki murakami</li>
-      <li>book of laughter and forgetting, milan kundera</li>
-      <li>The Mathematician's Lament, Paul Lockhart</li>
-      <li>7 1/2 lessons about the brain, lisa feldman barrett</li>
-      <li>permutation city, greg egan</li>
-      <li><a href="https://www.nickbostrom.com/fable/dragon.html" target="_blank">The Fable of the Dragon-Tyrant, Nick Bostrom</a></li>
-      <li><a href="https://frc.ri.cmu.edu/~hpm/project.archive/general.articles/1998/SimConEx.98.html" target="_blank">
-        Simulation, Consciousness, Existence, Hans Moravec
-       </a></li>
-      <li><a href="#">Ur-Fascism, Umberto Eco</a></li>
+        <li>beowulf, tr. burton raffel (reread)<b>☆</b></li>
+        <li>the plague, albert camus</li>
+        <li>leave society, tao lin</li>
+        <li>hiroshima notes, kenzaburo oe</li>
+        <li>Emperor's New Mind, Roger Penrose</li>
+        <li>territory of light, yuko tsushima</li>
+        <li>My Struggle, Book 5, Karl Ove Knausgaard</li>
+        <li>the elephant vanishes, haruki murakami</li>
+        <li>book of laughter and forgetting, milan kundera</li>
+        <li>The Mathematician's Lament, Paul Lockhart</li>
+        <li>7 1/2 lessons about the brain, lisa feldman barrett</li>
+        <li>permutation city, greg egan</li>
+        <li><a href="https://www.nickbostrom.com/fable/dragon.html" target="_blank">The Fable of the Dragon-Tyrant, Nick Bostrom</a></li>
+        <li><a href="https://frc.ri.cmu.edu/~hpm/project.archive/general.articles/1998/SimConEx.98.html" target="_blank">
+          Simulation, Consciousness, Existence, Hans Moravec
+         </a></li>
+        <li><a href="#">Ur-Fascism, Umberto Eco</a></li>
       <h1>2020</h1>
-      <li>norwegian wood (reread)</li>
-      <li>ikigai, ken mogi</li>
-      <li>madness of crowds, douglas murray<b>☆</b></li>
-      <li>Mutual Aid, Peter Kropotkin<b>☆</b></li>
-      <li>blindness, saramago<b>☆</b></li>
-      <li>Lying, Sam Harris</li>
-      <li>Free Will, Sam Harris</li>
-      <li>my struggle, book 4, karl ove knausgaard</li>
-      <li>the true believer, eric hoffer</li>
-      <li>seize the day, saul bellow</li>
-      <li>the sense of an ending, julian barnes</li>
-      <li>ms ice sandwich, mieko kawakami</li>
-      <li>a well-kept life, hoshi shinichi</li>
-      <li>dubliners, james joyce</li>
-      <li>hardboiled & hard luck, banana yoshimoto</li>
-      <li>my struggle, book 3, karl ove knausgaard</li>
-      <li class="other">The Nightmare That Is a Reality, Arthur Koestler</li>
-      <li class="other">The Unreasonable Effectiveness of Mathematics in the Natural Sciences, Eugene Wigner</li>
-      <li class="other">Existentialism is a Humanism, Jean-Paul Sartre</li>
-      <li class="other">Ecclesiastes</li>
+        <li>norwegian wood (reread)</li>
+        <li>ikigai, ken mogi</li>
+        <li>madness of crowds, douglas murray<b>☆</b></li>
+        <li>Mutual Aid, Peter Kropotkin<b>☆</b></li>
+        <li>blindness, saramago<b>☆</b></li>
+        <li>Lying, Sam Harris</li>
+        <li>Free Will, Sam Harris</li>
+        <li>my struggle, book 4, karl ove knausgaard</li>
+        <li>the true believer, eric hoffer</li>
+        <li>seize the day, saul bellow</li>
+        <li>the sense of an ending, julian barnes</li>
+        <li>ms ice sandwich, mieko kawakami</li>
+        <li>a well-kept life, hoshi shinichi</li>
+        <li>dubliners, james joyce</li>
+        <li>hardboiled & hard luck, banana yoshimoto</li>
+        <li>my struggle, book 3, karl ove knausgaard</li>
+        <li class="other">The Nightmare That Is a Reality, Arthur Koestler</li>
+        <li class="other">The Unreasonable Effectiveness of Mathematics in the Natural Sciences, Eugene Wigner</li>
+        <li class="other">Existentialism is a Humanism, Jean-Paul Sartre</li>
+        <li class="other">Ecclesiastes</li>
       </div>
       <div>
       <h1>2019</h1>
-      <li>brief encounters, dick cavett</li>
-      <li>terra incognita, spring in fialta and the doorbell, vladimir nabokov</li>
-      <li>the emissary, yoko tawada</li>
-      <li>convenience store woman, sayaka murata</li>
-      <li>My Struggle Book 2, karl ove knausgaard</li>
-      <li>what is the what, david eggers</li>
-      <li>moshi moshi, shimokitazawa, banana yoshimoto</li>
-      <li>my struggle, book 1, karl ove knausgaard<b>☆</b></li>
-      <li>what purpose did i serve in your life, marie calloway<b>☆</b></li>
-      <li>pinball, 1973, haruki murakami</li>
-      <li>hear the wind sing, haruki murakami</li>
-      <li>kitchen, banana yoshimoto<b>☆</b></li>
-      <li>middlesex, jeffrey eugenides<b>☆</b></li>
+        <li>brief encounters, dick cavett</li>
+        <li>terra incognita, spring in fialta and the doorbell, vladimir nabokov</li>
+        <li>the emissary, yoko tawada</li>
+        <li>convenience store woman, sayaka murata</li>
+        <li>My Struggle Book 2, karl ove knausgaard</li>
+        <li>what is the what, david eggers</li>
+        <li>moshi moshi, shimokitazawa, banana yoshimoto</li>
+        <li>my struggle, book 1, karl ove knausgaard<b>☆</b></li>
+        <li>what purpose did i serve in your life, marie calloway<b>☆</b></li>
+        <li>pinball, 1973, haruki murakami</li>
+        <li>hear the wind sing, haruki murakami</li>
+        <li>kitchen, banana yoshimoto<b>☆</b></li>
+        <li>middlesex, jeffrey eugenides<b>☆</b></li>
       <h1>2018</h1>
-      <li>the book of tokyo, various, translated</li>
-      <li>shoplifting from american apparel, tao lin</li>
-      <li>the grapes of wrath, john steinbeck</li>
-      <li>hard-boiled wonderland and the end of the world, haruki murakami, tr. alfred birnbaum</li>
-      <li>the optimist's daughter, eudora welty</li>
-      <li>foundation, isaac asimov</li>
-      <li>everything is illuminated, jonathan safran foer</li>
-      <li>a brief history of time, stephen hawking<b>☆</b></li>
-      <li>the known world, edward p. jones<b>☆</b></li>
-      <li>the metamorphosis, franz kafka</li>
-      <li>the stranger, albert camus</li>
-      <li>the human stain, philip roth</li>
-      <li>richard yates, tao lin</li>
+        <li>the book of tokyo, various, translated</li>
+        <li>shoplifting from american apparel, tao lin</li>
+        <li>the grapes of wrath, john steinbeck</li>
+        <li>hard-boiled wonderland and the end of the world, haruki murakami, tr. alfred birnbaum</li>
+        <li>the optimist's daughter, eudora welty</li>
+        <li>foundation, isaac asimov</li>
+        <li>everything is illuminated, jonathan safran foer</li>
+        <li>a brief history of time, stephen hawking<b>☆</b></li>
+        <li>the known world, edward p. jones<b>☆</b></li>
+        <li>the metamorphosis, franz kafka</li>
+        <li>the stranger, albert camus</li>
+        <li>the human stain, philip roth</li>
+        <li>richard yates, tao lin</li>
       <h1>2017</h1>
-      <li>blood meridian, cormac mcarthy</li>
-      <li>bed, tao lin</li>
-      <li>breakfast at tiffany's, truman capote</li>
-      <li>housekeeping, marilynne robinson</li>
-      <li>the woman warrior, maxine hong kingston</li>
-      <li>the bluest eye, toni morrison</li>
-      <li>the beauty of history, viivi luik</li>
-      <li>swing time, zadie smith<b>☆</b></li>
-      <li>lost in the funhouse, john barth<b>☆</b></li>
-      <li>after art, david joselit</li>
-      <li>franny and  zooey, j.d. salinger</li>
-      <li>on the road, jack kerouac</li>
-      <li>lolita, vladimir nabokov</li>
-      <li>wise blood, flannery o’connor</li>
-      <li>black boy, richard wright<b>☆</b></li>
+        <li>blood meridian, cormac mcarthy</li>
+        <li>bed, tao lin</li>
+        <li>breakfast at tiffany's, truman capote</li>
+        <li>housekeeping, marilynne robinson</li>
+        <li>the woman warrior, maxine hong kingston</li>
+        <li>the bluest eye, toni morrison</li>
+        <li>the beauty of history, viivi luik</li>
+        <li>swing time, zadie smith<b>☆</b></li>
+        <li>lost in the funhouse, john barth<b>☆</b></li>
+        <li>after art, david joselit</li>
+        <li>franny and  zooey, j.d. salinger</li>
+        <li>on the road, jack kerouac</li>
+        <li>lolita, vladimir nabokov</li>
+        <li>wise blood, flannery o’connor</li>
+        <li>black boy, richard wright<b>☆</b></li>
       <h1>earlier, memorable</h1>
-      <li>the crying of lot 49, thomas pynchon</li>
-      <li>the virgin suicides, jeffrey eugenides</li>
-      <li>norwegian wood, haruki murakami</li>
-      <li>the marriage plot, jeffrey eugenides<b>☆</b></li>
-      <li>the lord of the rings trilogy, jrr tolkein<b>☆</b></li>
-      <li>the hobbit, jrr tolkein<b>☆</b></li>
-      <li>the silmarillion, jrr tolkein<b>☆</b></li>
-      <li>the hitchhiker's guide to the galaxy books, douglas adams<b>☆</b></li>
-      <li>le morte d'arthur, thomas malory</li>
-      <li>the fountainhead, ayn rand</li>
+        <li>the crying of lot 49, thomas pynchon</li>
+        <li>the virgin suicides, jeffrey eugenides</li>
+        <li>norwegian wood, haruki murakami</li>
+        <li>the marriage plot, jeffrey eugenides<b>☆</b></li>
+        <li>the lord of the rings trilogy, jrr tolkein<b>☆</b></li>
+        <li>the hobbit, jrr tolkein<b>☆</b></li>
+        <li>the silmarillion, jrr tolkein<b>☆</b></li>
+        <li>the hitchhiker's guide to the galaxy books, douglas adams<b>☆</b></li>
+        <li>le morte d'arthur, thomas malory</li>
+        <li>the fountainhead, ayn rand</li>
     </div>
     <div>
       <h1>Movies to remember</h1>
@@ -401,7 +402,7 @@
       <h1>on the shelf</h1>
         <li>Breath, James Nestor</li>
         <li>A Hunter-Gatherer's Guide to the 21st Century, heying & weinstein</li>
-				<li>My Struggle, Book 6, Karl Ove Knausgaard</li>
+        <li>My Struggle, Book 6, Karl Ove Knausgaard</li>
         <li>Art in Theory 1900-2000, Charles Harrison, Paul Wood (35%) - The supreme misfortune is when theory outstrips performance. - da Vinci</li>
         <li>leaves of grass, walt whitman</li>
         <li>on the origin of species, darwin</li>
