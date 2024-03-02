@@ -3,6 +3,7 @@
 		<link rel="preconnect"href="https://fonts.googleapis.com">
 		<link rel="preconnect"href="https://fonts.gstatic.com"crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"rel="stylesheet">
+		<link href="./bootstrap-grid.min.css" rel="stylesheet">
 		<style>
 		html {
 			background: rgb(42, 43, 46);
@@ -22,6 +23,7 @@
 		}
 		body {
 			margin-bottom: 100px;
+			color: #f0f0f0;
 		}
 		h1 {
 			color: #f0f0f0;
@@ -39,26 +41,74 @@
 			color: grey;
 			font-style: italic;
 		}
-		.c {
-			color: #ff9dae;
-			font-style: italic;
-		}
 		h3 {
 			margin-bottom: 15px;
+		}
+		.strong {
+			color: white;
+			font-weight: bold;
+		}
+		.weak {
+			color: lightgrey;
+			font-weight: 200;
+		}
+		.example {
+			color: #e5c8ec;
 		}
 		</style>
 	</head>
 	<body>
 		<h1>Mastery Document</h1>
 		<ul>
+			<li>Framework</li>
 			<li>Mastery of Seeing</li>
-			<li>Mastery of Paint Manipulation and Method</li>
+			<li>Mastery of Method</li>
 			<li>Mastery of Problem Solving</li>
 			<li>Evidence of Mastery</li>
 		</ul>
 		<p>A map is not the territory it represents, but, if correct, it has a similar structure to the territory, which accounts for its usefulness. - Alfred Korzybski</p>
-		<p>Items in <span class="b">grey</span> are still being considered.</p>
+		<h2>Framework</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-4">
+					<div class="lens">
+						<h3>Comprehensible Input Hypothesis</h3>
+						<p class="strong">Color, Drawing (Proportions), Memory</p>
+						<ul class="example">
+							<li>Copying</li>
+							<li>Still life setup</li>
+							<li>Memory painting</li>
+							<li>...</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-lg-4">
+					<div class="lens">
+						<h3>Conceptual Study</h3>
+						<p class="strong">Visual Order, Design</p>
+						<p class="weak"></p>
+						<ul class="example">
+							<li>Knowledge organization</li>
+							<li>Copying</li>
+							<li>...</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-12 col-lg-4">
+					<div class="lens">
+						<h3>Proof & Geoposition</h3>
+						<p class="strong">Method, Visual Order, Design</p>
+						<ul class="example">
+							<li>Working directly from nature</li>
+							<li>Still life setup</li>
+							<li>...</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 		<h2>Mastery of Seeing</h2>
+		<p>Items in <span class="b">grey</span> are still being considered.</p>
 		<p>Color, Drawing, Memory, Visual Order, Design, Invention</p>
 		<p>ie, drawing form is impossible without first seeing form. ie, hand ability shortly follows eye ability. Krashen: acquisition begets speaking. Gammell: Seeing is seeing relationally.</p>
 		<h3>Color</h3>
@@ -125,7 +175,7 @@
 				<li class="b">Joyful memory (See Language Input Hypothesis)</li>
 				<li class="b">Simultaneous observation</li>
 			</ul>
-			<h3>Visual Order</h3>
+			<h3>Visual Order - belongs in between Seeing and Method</h3>
 			<ul>
 				<li>Greater forms, lesser forms</li>
 				<li>Greater to lesser shape and value units</li>
@@ -210,7 +260,7 @@
 				<li>Environment</li>
 				<li>Perspective</li>
 			</ul>
-			<h2>Mastery of Paint Manipulation and Method</h2>
+			<h2>Mastery of Method</h2>
 			<p>The skills that are a result of discipline and repetition. Muscle memory. Practices that can be acquired immediately upon learning of it.</p>
 			<ul>
 				<li>Always viewing from the same location</li>
