@@ -11,6 +11,10 @@ html {
 		background: white;*/
 }
 
+body {
+	background: rgb(42, 43, 46);
+}
+
 a {
 	color: lightblue;
 }
@@ -56,14 +60,6 @@ h3 {
 	color: #e5c8ec;
 }
 
-img {
-	width: 600px;
-	max-width: 100%;
-	max-height: 400px;
-	height: auto;
-	object-fit: contain;
-}
-
 span {
 	color: grey;
 	display: inline;
@@ -89,8 +85,7 @@ article div {
 
 blockquote {
 	margin: 40px;
-	font-size: 20px;
-	line-height: 26px;
+	font-size: 1rem;
 	font-style: italic;
 }
 
