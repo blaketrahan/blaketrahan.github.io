@@ -4,275 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>library</title>
-  <style>
-    html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed,
-  figure, figcaption, footer, header, hgroup,
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-  }
-  /* HTML5 display-role reset for older browsers */
-  article, aside, details, figcaption, figure,
-  footer, header, hgroup, menu, nav, section {
-    display: block;
-  }
-  body {
-    line-height: 1;
-    width: 100%;
-    margin: auto;
-    max-width: 1500px;
-  }
-  ol, ul {
-    list-style: none;
-  }
-  blockquote, q {
-    quotes: none;
-  }
-  blockquote:before, blockquote:after,
-  q:before, q:after {
-    content: '';
-    content: none;
-  }
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  html {
-      font-size: 10px;
-      background: rgb(4,32,41);
-      color: #eed;
-      font-family: Corbel, sans-serif;
-  }
-  .books {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .books > div {
-    min-width: 0;
-    flex-basis: 25%;
-  }
-  .goals, .diet,
-  .work, .todo, .feynman {
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px;
-    margin-bottom: 2rem;
-    float: left;
-
-  }
-  .books {
-    clear: both;
-  }
-  .todo {
-  border: 20px outset #62693e;
-      padding: 1px 20px 10px 20px;
-      background: #575d3b;
-      color: white;
-      font-size: 16px;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  ul {
-    max-width: 25%;
-  }
-  img {
-    max-width: 100%;
-  }
-  h1 {
-    font-size: 1.5rem;
-    color: #f77777;
-    margin-bottom: 0.5rem;
-  }
-  li {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-  }
-  li:hover {
-    white-space: initial;
-    overflow: initial;
-    text-overflow: initial;
-  }
-  li.other {
-    color: #807599;
-  }
-  li:hover,
-  li.other:hover {
-    color: pink;
-  }
-  a {
-    text-decoration: none;
-    color: lightblue;
-  }
-  li + h1 {
-    margin-top: 0.5rem;
-  }
-  .goals {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-        border: 12px outset #344d54;
-      background: #283e44;
-  }
-  .work {
-    color: aquamarine;
-    border: 12px outset #4c0b3a;
-      background: #3c0c2f;
-      padding: 6px;
-  }
-  .diet {
-    color: magenta;
-  }
-  .work, .diet {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-  pre {
-    background: #f4f0e9;
-    color: #333;
-    padding: 1rem;
-    font-size: 1.5rem;
-    line-height: 2.8rem;
-    font-family: sans-serif;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word;
-  }
-  .feynman {
-      border: 12px outset #0e141b;
-      background: #15202b;
-      padding-bottom: 10px;
-  }
-  .holiday {
-    padding: 5px;
-    float: right;
-  }
-  .important-link {
-    font-size: 18px;
-    padding: 10px;
-    text-decoration: underline;
-  }
-  @media (max-width: 800px) {
-    html {
-      padding: 15px;
-    }
-    .goals, .diet, .work, .todo, .feynman {
-      width: 100%;
-    }
-    .books {
-      display: block;
-    }
-    ul {
-      max-width: 100%;
-    }
-  }
-  .main {
-    display: flex;
-  }
-  @media (max-width: 800px) {
-    .main {
-      display: block;
-    }
-  }
-  </style>
 </head>
 <body>
 <section class="main">
-  <div class="feynman">
-    <img src="./feynman.png">
-  </div>
   <div>
     <a class="important-link" href="./paintings.html">Important Paintings</a>
     <br>
     <br>
     <br>
-    <a class="important-link" href="https://twilightofpainting.com/w/">Twilight of Painting wiki</a>
+    <p><a class="important-link" href="./mastery/index.html">Mastery Map</a></p><br>
+    <p>October 15: Are Dreams in Japan<br><br><br>
+    2017 was backpack, weightless, open world</p><br>
   </div>
   <div style="justify-self: flex-end;flex-grow: 1;text-align: right;">
-    <p>October 15: Are Dreams in Japan<br><br>
-    2017 was backpack, weightless, open world</p>
   </div>
 </section>
-  <section class="books">
-    <div>
-      <h1>the antilibrary:</h1>
-      <li>zero, charles seife</li>
-      <li>sapiens, yuval</li>
-      <li><a href="https://journals.sagepub.com/doi/pdf/10.1080/03064220408537357">Live Not By Lies, 1974 essay by Aleksandr Solzhenitsyn.</a></li>
-      <li>chimera, john barth</li>
-      <li>exodus</li>
-      <li>russian, dostoevsky, tolstoy</li>
-      <li>james baldwin</li>
-      <li><a href="https://theportal.wiki/wiki/Erics_Most_Important_Set_of_Books">eric's important books</a></li>
-      <li>endless frontier vannevar bush</li>
-      <li>Childhood's End, arthur c. clarke</li>
-      <li>solaris, Stanisław Lem</li>
-      <li>shakespeare, othello, etc, arkangel audio, orson welles, http://shakespeare.mit.edu/index.html</li>
-      <li>ovid, tiresias</li>
-      <li>george orwell, aldous huxley</li>
-      <li>walden</li>
-      <li>fencing, aldo nadi</li>
-      <li>The Black Swan, taleb</li>
-      <li>the kalevala</li>
-      <li>shattered sword: midway</li>
-      <li>ancient war history</li>
-      <li>atlas shrugged</li>
-      <li>objectivism, yaron brook, leonard peikoff</li>
-      <li>love and math, frenkel</li>
-      <li>short stories in japanese</li>
-      <li>scifi: foundation, hyperion, dune, greg egan</li>
-      <li>zero to one</li>
-      <li>selfish gene</li>
-      <li>permanent record snowden</li>
-      <li>Alexis de Tocqueville</li>
-      <li>italo calvino</li>
-      <li>paradise lost</li>
-      <li>books on chess</li>
-      <li>feynman lectures, dirac lectures</li>
-      <li>the road to reality, roger penrose</li>
-      <li>books on war, difficult situations (re: the plague)</li>
-      <li>morning star, knausgaard</li>
-      <li>The Rings of Saturn, sebald</li>
-      <li>joan didion</li>
-      <li>dialogue, galileo (audiobook, keating)</li>
-      <li>Less Than One: Selected Essays. 1986. By Joseph Brodsky</li>
-      <li>outlive, attia</li>
-      <li>virtue of selfishness, rand</li>
-      <li>gk chesterton</li>
-      <li>Black Rednecks and White Liberals, sowell</li>
-      <li>homily: solemnity of the ascension of our lord, paul vi</li>
-      <li>treatise on painting, da vinci</li>
-      <li>meditations, marcus aurelius</li>
-      <li>mathematician's apology, hardy</li>
-      <li>Narcissus and Goldmund, Hesse</li>
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <blockquote>
+          Nature’s first green is gold,<br>
+          Her hardest hue to hold.<br>
+          Her early leaf’s a flower;<br>
+          But only so an hour.<br>
+          Then leaf subsides to leaf.<br>
+          So Eden sank to grief,<br>
+          So dawn goes down to day.<br>
+          Nothing gold can stay.<br><br>
+          <span class="author">Robert Frost</span>
+        </blockquote>
+      </div><br>
+      <div class="col-12 col-lg-6">
+        <blockquote>
+          Read everyday.<br>
+          Spend time with nature.<br>
+          Ask questions.<br>
+          Never stop learning.<br>
+          Don't pay attention to what others think of you.<br>
+          Do what interests you the most.<br>
+          Study hard.<br>
+          Teach others what you know.<br>
+          Make mistakes and learn.<br>
+          It's okay to not know things.<br>
+          <br><span class="author">Richard Feynman, curated list of advice.</span>
+        </blockquote>
+      </div><br>
+      <div class="col-12 col-lg-6">
+        <blockquote>
+          I thought I was writing what I wanted to read. That's what I would think when I didn't know how to phrase something or end a story. I'll just remind myself: I'm writing what I want to read.<br>
+          <br><span class="author">Tao Lin, on learning to write.</span>
+        </blockquote>
+      </div><br>
+      <div class="col-12 col-lg-6">
+        <blockquote>
+          Every puzzle is solved by shifting your perspective.<br>
+          <br><span class="author">Jonathan Blow, on solving puzzles in The Witness, quoting from memory.</span>
+        </blockquote>
+      </div><br>
+      <div class="col-12 col-lg-6">
+        <blockquote>
+          A map is not the territory it represents, but, if correct, it has a similar structure to the territory, which accounts for its usefulness.<br>
+          <br><span class="author">Alfred Korzybski</span>
+        </blockquote>
+      </div>
     </div>
-    <div>
-      <!-- ================================================== -->
-      <!-- ================================================== -->
-      <h1>up next</h1>
-        <li>ingres, pach</li>
+  </div>
+<hr>
+  <div>
+    <h1>Movies to remember</h1>
+      <li>Paris, Texas</li>
+      <li>Wings of Desire</li>
+      <li>In the Mood for Love</li>
+      <li>Lost in Translation</li>
+      <li>The Cook, the Thief, His Wife & Her Lover</li>
+      <li>Total Love (Mashehu Totali)</li>
       <h1>reading</h1>
         <li>the artist's way, julia cameron</li>
         <li>nurtured by love, suzuki</li>
@@ -280,6 +85,11 @@
       <h1>2024</h1>
         <li>lecture: Ten O'Clock, Whistler</li>
         <li>lecture: discourses on art, reynolds</li>
+  </div>
+  <section class="books">
+    <div>
+      <!-- ================================================== -->
+      <!-- ================================================== -->
       <h1>2023</h1>
         <li>gammell's essays</li>
         <li>poem: beauty, cyprian norwid</li>
@@ -405,10 +215,6 @@
         <li>the fountainhead, ayn rand</li>
     </div>
     <div>
-      <h1>Movies to remember</h1>
-        <li>Total Love (Mashehu Totali)</li>
-    </div>
-    <div>
       <h1>on the shelf</h1>
         <li>the bible</li>
         <li>war and peace, tolstoy</li>
@@ -426,6 +232,58 @@
         <li>the kalevala, elias lönnrot tr. keith bosley</li>
         <li>the art of computer programming vol 1, donald knuth</li>
         <li><strong>神様、川上弘美</strong></li>
+    </div>
+    <div>
+      <h1>the antilibrary:</h1>
+      <li>zero, charles seife</li>
+      <li>sapiens, yuval</li>
+      <li><a href="https://journals.sagepub.com/doi/pdf/10.1080/03064220408537357">Live Not By Lies, 1974 essay by Aleksandr Solzhenitsyn.</a></li>
+      <li>chimera, john barth</li>
+      <li>exodus</li>
+      <li>russian, dostoevsky, tolstoy</li>
+      <li>james baldwin</li>
+      <li><a href="https://theportal.wiki/wiki/Erics_Most_Important_Set_of_Books">eric's important books</a></li>
+      <li>endless frontier vannevar bush</li>
+      <li>Childhood's End, arthur c. clarke</li>
+      <li>solaris, Stanisław Lem</li>
+      <li>shakespeare, othello, etc, arkangel audio, orson welles, http://shakespeare.mit.edu/index.html</li>
+      <li>ovid, tiresias</li>
+      <li>george orwell, aldous huxley</li>
+      <li>walden</li>
+      <li>fencing, aldo nadi</li>
+      <li>The Black Swan, taleb</li>
+      <li>the kalevala</li>
+      <li>shattered sword: midway</li>
+      <li>ancient war history</li>
+      <li>atlas shrugged</li>
+      <li>objectivism, yaron brook, leonard peikoff</li>
+      <li>love and math, frenkel</li>
+      <li>short stories in japanese</li>
+      <li>scifi: foundation, hyperion, dune, greg egan</li>
+      <li>zero to one</li>
+      <li>selfish gene</li>
+      <li>permanent record snowden</li>
+      <li>Alexis de Tocqueville</li>
+      <li>italo calvino</li>
+      <li>paradise lost</li>
+      <li>books on chess</li>
+      <li>feynman lectures, dirac lectures</li>
+      <li>the road to reality, roger penrose</li>
+      <li>books on war, difficult situations (re: the plague)</li>
+      <li>morning star, knausgaard</li>
+      <li>The Rings of Saturn, sebald</li>
+      <li>joan didion</li>
+      <li>dialogue, galileo (audiobook, keating)</li>
+      <li>Less Than One: Selected Essays. 1986. By Joseph Brodsky</li>
+      <li>outlive, attia</li>
+      <li>virtue of selfishness, rand</li>
+      <li>gk chesterton</li>
+      <li>Black Rednecks and White Liberals, sowell</li>
+      <li>homily: solemnity of the ascension of our lord, paul vi</li>
+      <li>treatise on painting, da vinci</li>
+      <li>meditations, marcus aurelius</li>
+      <li>mathematician's apology, hardy</li>
+      <li>Narcissus and Goldmund, Hesse</li>
     </div>
   </section>
 </body>
