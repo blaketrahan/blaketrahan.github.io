@@ -11,6 +11,10 @@ html {
 		background: white;*/
 }
 
+img {
+	max-width: 100%;
+}
+
 body {
 	background: rgb(42, 43, 46);
 }
